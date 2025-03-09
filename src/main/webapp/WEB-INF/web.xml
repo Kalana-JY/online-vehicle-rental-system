@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-inst..." xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web..." id="WebApp_ID" version="3.0">
+
+	<servlet>
+	
+		<servlet-name>addCustomer</servlet-name>
+		<servlet-class>servlet.addCustomer</servlet-class>
+	
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>addCustomer</servlet-name>
+		<url-pattern>/addCus</url-pattern>
+	
+	</servlet-mapping>
+	
+	<servlet>
+	
+		<servlet-name>Login</servlet-name>
+		<servlet-class>servlet.Login</servlet-class>
+	
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/logCus</url-pattern>
+	
+	</servlet-mapping>
+	
+	<servlet>
+	
+		<servlet-name>addCustomers</servlet-name>
+		<servlet-class>servlet.addCustomers</servlet-class>
+	
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>addCustomers</servlet-name>
+		<url-pattern>/cusAdmin</url-pattern>
+	
+	</servlet-mapping>
+	
+	<servlet>
+	
+		<servlet-name>singleDataButton</servlet-name>
+		<servlet-class>servlet.singleDataButton</servlet-class>
+	
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>singleDataButton</servlet-name>
+		<url-pattern>/singleButton</url-pattern>
+	
+	</servlet-mapping>
+	
+	<servlet>
+	
+		<servlet-name>updateCustomer</servlet-name>
+		<servlet-class>servlet.updateCustomer</servlet-class>
+	
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>updateCustomer</servlet-name>
+		<url-pattern>/updatecustomer</url-pattern>
+	
+	</servlet-mapping>
+	
+	<servlet>
+	
+		<servlet-name>deleteCustomer</servlet-name>
+		<servlet-class>servlet.deleteCustomer</servlet-class>
+	
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>deleteCustomer</servlet-name>
+		<url-pattern>/deletecustomer</url-pattern>
+	
+	</servlet-mapping>
+	
+	<servlet>
+	
+		<servlet-name>Logout</servlet-name>
+		<servlet-class>servlet.Logout</servlet-class>
+	
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/logoutCus</url-pattern>
+	
+	</servlet-mapping>
+
+</web-app>
+
+
+
