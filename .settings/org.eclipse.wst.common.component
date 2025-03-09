@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="online-vehicle-rental-system">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <property name="context-root" value="online-vehicle-rental-system"/>
+        <property name="java-output-path" value="/online-vehicle-rental-system/build/classes"/>
+    </wb-module>
+</project-modules>
