@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+  }
+  .sidebar {
+    width: 280px;
+    background-color: #343a40;
+    color: white;
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+  }
+  .main-content {
+    flex-grow: 1; /* Allow content to take remaining space */
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  .nav-link {
+    color: #dcdcdc;
+  }
+  .nav-link:hover {
+    background-color: #495057;
+    color: #fff;
+  }
+  .scrollable-table {
+    max-height: 300px; /* Adjust height as needed */
+    overflow-y: auto;
+    display: block;
+  }
+  .scrollable-table thead {
+    position: sticky;
+    top: 0;
+    background-color: #fff; /* Match the table header background */
+    z-index: 1;
+  }
+  .table-bordered {
+    border: 1px solid #dee2e6; /* Bootstrap's default border color */
+  }
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #dee2e6; /* Bootstrap's default border color */
+  }
+  .catTopic{
+		text-align: center;
+		padding: 10px 10px;
+	}
+	.card1{
+		margin: 10px;
+		margin-left: 30px;
+		margin-right: 30px;
+		width: 14rem;
+		height: 8rem; 
+		background-color: #D9D9D9;
+		transition: background-color 0.6s ease-in-out;
+	}
+	.catCard{
+		margin-left: 60px;
+	}
+	.img{
+		margin-top: 10px;
+		height: 48px; 
+		width: 48px;
+	}
