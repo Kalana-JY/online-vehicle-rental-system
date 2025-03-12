@@ -40,24 +40,6 @@
   <div class="container p-0 my-0">
   	<h2>Dashboard</h2>
   </div>
-  
-  <%-- <div class="mb-3">
-      <div class="md-6">
-        <input type="text" class="form-control" placeholder="Search by username or email...">
-      </div>
-      <div class="md-3">
-        <select class="form-select">
-          <option value="">All Roles</option>
-          <option value="admin">Admin</option>
-          <option value="staff">Staff</option>
-          <option value="customer">Customer</option>
-          <option value="car_owner">Car Owner</option>
-        </select>
-      </div>
-      <div class="md-3">
-        <button class="btn btn-primary w-100">Search</button>
-      </div>
-    </div>--%>
     
     <div>
 		<section class="bg-light py-1">
