@@ -240,8 +240,8 @@
                 <div class="col-md-5 text-center text-md-start mt-3 mt-md-0">
                     <div class="card border-0 bg-transparent">
                         <div class="card-body">
-                            <h2 class="fw-default text-dark mb-3">Turn Your Car into Earnings!</h4>
-                            <h3 class="fw-semibold mb-3">Rent It Out Today!</h5>
+                            <h2 class="fw-default text-dark mb-3">Turn Your Car into Earnings!</h2>
+                            <h3 class="fw-semibold mb-3">Rent It Out Today!</h3>
                             <p class="text-muted mb-4">List your vehicle on our platform and start making money effortlessly. Secure, reliable, and hassle-free!</p>
                             
                             <button class="btn btn-warning">Register Your Vehicle Now</button>
