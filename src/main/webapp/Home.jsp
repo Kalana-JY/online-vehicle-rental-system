@@ -28,6 +28,9 @@
                     <a href="#" class="btn btn-warning">Explore Vehicles</a>
                 </div>
                 <!-- Image on the Right -->
+                <!-- Image on the Right -->
+                <!-- Main -->
+
                 <div class="col-md-6 text-center">
                     <img src="Images/carplus.png" alt="Dream Vehicle" class="img-fluid">
                 </div>
