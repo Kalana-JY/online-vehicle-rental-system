@@ -226,7 +226,7 @@
 	</div>	--%>
 	
 	<div>
-  <h4 class="fw-normal text-dark mb-3 ps-5 pt-3">Popular Vehicles</h4>
+  <h4 class="fw-default text-dark mb-1" style="padding: 10px 50px;">Popular Vehicles</h4>
   <section class="bg-light py-3 d-flex justify-content-center">
     <div class="container">
       <div class="row g-4 justify-content-center">

@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="CSS/home.css">
 </head>
 <body>
-    <footer class="footer bg-light py-4 mt-5">
-        <div class="container">
+	
+    <footer class="footer py-4 mt-4" style="background-color: #e3f2fd;">
+        <div class="container text-center">
             <div class="row">
-                <!-- Quick Links -->
-                <div class="col-md-4 mb-4">
+                
+                <div class="col-md-4 mb-2">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#">Home</a></li>
@@ -23,8 +24,8 @@
                     </ul>
                 </div>
 
-                <!-- Contact Information -->
-                <div class="col-md-4 mb-4">
+                
+                <div class="col-md-4 mb-2">
                     <h5>Contact Us</h5>
                     <ul class="list-unstyled">
                         <li><i class="fas fa-map-marker-alt me-2"></i>123 Main St, City, Country</li>
@@ -33,10 +34,10 @@
                     </ul>
                 </div>
 
-                <!-- Social Media -->
-                <div class="col-md-4 mb-4">
+                
+                <div class="col-md-4 mb-2">
                     <h5>Follow Us</h5>
-                    <div class="d-flex gap-3">
+                    <div class="mt-3">
                         <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
                         <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
                         <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
@@ -44,8 +45,10 @@
                     </div>
                 </div>
             </div>
+            
+            <hr style="opacity: 0.2;">
 
-            <!-- Copyright -->
+            
             <div class="row">
                 <div class="col-12 text-center mt-3">
                     <small>&copy; 2025 On The Go Rentals. All rights reserved.</small>
