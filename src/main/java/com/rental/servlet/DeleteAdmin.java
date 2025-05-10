@@ -23,11 +23,21 @@ public class DeleteAdmin extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String emailToDelete = request.getParameter("email");
+		
 		com.rental.model.Admin admin = new com.rental.model.Admin();
-		admin.setEmail(request.getParameter("email"));
+		admin.setEmail(emailToDelete);
 		
 		com.rental.services.AdminServices service = new com.rental.services.AdminServices();
 		service.deleteAdmin(admin);
+		
+		com.rental.model.Admin loggedInAdmin = (com.rental.model.Admin) request.getSession().getAttribute("admin");
+
+		if (loggedInAdmin != null && emailToDelete.equals(loggedInAdmin.getEmail())) {
+		    request.getSession().invalidate();
+		    response.sendRedirect("LoginAdmin.jsp");
+		    return;
+		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("DashboardAdmin.jsp");
 		dispatcher.forward(request, response);
