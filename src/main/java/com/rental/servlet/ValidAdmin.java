@@ -40,7 +40,7 @@ public class ValidAdmin extends HttpServlet {
 			response.sendRedirect("DashboardAdmin.jsp");
 		} else {
 			request.setAttribute("Error", "Invalid Email or Password!");
-			RequestDispatcher dispatcher = request.getRequestDispatcher("adminLogin.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("LoginAdmin.jsp");
 			dispatcher.forward(request, response);
 		}
 		
