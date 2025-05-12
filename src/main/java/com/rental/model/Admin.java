@@ -1,53 +1,45 @@
 package com.rental.model;
 
-public class Admin {
-	private int id;
-	private String name;
-	private String email;
-	private String password;
+public class Admin extends User{
+	
 	private String address;
 	private String phoneNumber;
 	private String fileName;
 	
-	public int getId() {
-		return id;
+	public Admin() {
+		this.address = "";
+		this.phoneNumber = "";
+		this.fileName = "";
 	}
-	public String getName() {
-		return name;
+	
+	public Admin(int id, String name, String email, String password, String address, String phoneNumber, String fileName) {
+		super(id, name, email, password);
+		this.address = address;
+		this.phoneNumber = phoneNumber;
+		this.fileName = fileName;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public String getPassword() {
-		return password;
-	}
+	
+	
 	public String getFileName() {
 		return fileName;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
+	
 	public String getAddress() {
 		return address;
 	}
+	
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
+	
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}

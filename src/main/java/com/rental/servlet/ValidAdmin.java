@@ -1,6 +1,6 @@
 package com.rental.servlet;
 
-import java.io.IOException;
+import java.io.IOException; 
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,10 +31,10 @@ public class ValidAdmin extends HttpServlet {
 		
 		com.rental.services.AdminServices service = new com.rental.services.AdminServices();
 		
-		boolean status = service.validAdmin(admin);
+		boolean status = service.validUser(admin);
 		
 		if(status) {
-			com.rental.model.Admin loginAd = service.getOne(admin);
+			com.rental.model.User loginAd = service.getOne(admin);
 			HttpSession session = request.getSession();
 			session.setAttribute("admin", loginAd);
 			response.sendRedirect("DashboardAdmin.jsp");

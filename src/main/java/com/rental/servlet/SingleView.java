@@ -1,6 +1,6 @@
 package com.rental.servlet;
 
-import java.io.IOException;
+import java.io.IOException; 
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,10 +25,10 @@ public class SingleView extends HttpServlet {
 		
 		com.rental.model.Admin admin = new com.rental.model.Admin();
 		
-		admin.setId(Integer.parseInt(request.getParameter("id")));
+		admin.setEmail(request.getParameter("email"));
 		com.rental.services.AdminServices service = new com.rental.services.AdminServices();
 		
-		com.rental.model.Admin adm = service.singleData(admin);
+		com.rental.model.User adm = service.singleData(admin);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("DashboardAdmin.jsp");
 		
 		request.setAttribute("admin", adm);

@@ -1,6 +1,6 @@
 package com.rental.servlet;
 
-import java.io.IOException;
+import java.io.IOException; 
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -25,7 +25,7 @@ public class ReadAdmin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		com.rental.services.AdminServices service = new com.rental.services.AdminServices();
 		
-		ArrayList<com.rental.model.Admin> admDetails = service.getAllAdmin();
+		ArrayList<com.rental.model.Admin> admDetails = service.getAllUser();
 		request.setAttribute("admDetails", admDetails);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("DashboardAdmin.jsp");

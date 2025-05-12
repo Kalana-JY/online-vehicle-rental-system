@@ -56,7 +56,7 @@ public class UpdateAdmin extends HttpServlet {
 		 
 
 		com.rental.services.AdminServices service = new com.rental.services.AdminServices();
-		service.updateAdmin(admin);
+		service.updateUser(admin);
 
 		HttpSession session = request.getSession();
 		session.setAttribute("admin", admin);
