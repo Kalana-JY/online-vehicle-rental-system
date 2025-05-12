@@ -45,7 +45,7 @@ public class AddAdmin extends HttpServlet {
 		
 		try {
 			
-			service.addAdmin(admin);
+			service.addUser(admin);
 			
 			response.sendRedirect("DashboardAdmin.jsp");
 			
