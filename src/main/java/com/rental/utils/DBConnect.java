@@ -13,7 +13,7 @@ public class DBConnect {
 		
 		Class.forName("com.mysql.jdbc.Driver");
 		
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/onlinerental?characterEncoding=utf8", username, password);
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/onlinerental?characterEncoding=utf8&useSSL=false", username, password);
 		
 		return con;
 		
