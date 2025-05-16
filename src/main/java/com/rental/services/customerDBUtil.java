@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.rental.model.Admin;
 import com.rental.model.Customer;
 import com.rental.utils.DBConnect;
 
@@ -196,4 +197,36 @@ public class customerDBUtil {
 		
 		return isSuccess;
 	}
+	
+	public static List<Customer> getAllCustomerDetails(){
+		
+		ArrayList<Customer> cus = new ArrayList<>();
+		
+		try {
+			
+			con = DBConnect.getConnection();
+			stmt = con.createStatement();
+			String sql = "select * from customer";
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				
+				int id = rs.getInt(1);
+				String firstname = rs.getString(2);
+				String lastname = rs.getString(3);
+				String email = rs.getString(4);
+				String password = rs.getString(5);
+				
+				Customer c = new Customer(id,firstname,lastname,email,password);
+				cus.add(c);
+			}
+			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return cus;
+	}
+	
 }

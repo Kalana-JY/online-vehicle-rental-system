@@ -161,6 +161,15 @@
      	<servlet-name>paymentServlet</servlet-name>
      	<url-pattern>/paymentservlet</url-pattern>
      </servlet-mapping>
+     
+     <servlet>
+     	<servlet-name>customerRead</servlet-name>
+     	<servlet-class>servlet.customerRead</servlet-class>
+     </servlet>
+     <servlet-mapping>
+     	<servlet-name>customerRead</servlet-name>
+     	<url-pattern>/customerread</url-pattern>
+     </servlet-mapping>
 	
 </web-app>	
 

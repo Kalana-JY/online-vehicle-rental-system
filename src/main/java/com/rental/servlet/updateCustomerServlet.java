@@ -36,7 +36,7 @@ public class updateCustomerServlet extends HttpServlet {
 			List<Customer> cusDetails = customerDBUtil.getCustomerDetails(id);
 			request.setAttribute("cusDetails", cusDetails);
 			
-			RequestDispatcher dis = request.getRequestDispatcher("dummyProfile.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("customerProfile.jsp");
 			dis.forward(request, response);
 		}
 		else {
@@ -44,7 +44,7 @@ public class updateCustomerServlet extends HttpServlet {
 			List<Customer> cusDetails = customerDBUtil.getCustomerDetails(id);
 			request.setAttribute("cusDetails", cusDetails);
 			
-			RequestDispatcher dis = request.getRequestDispatcher("dummyProfile.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("updateCustomer.jsp");
 			dis.forward(request, response);
 		}
 	}
