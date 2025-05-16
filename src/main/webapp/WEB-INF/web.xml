@@ -99,8 +99,8 @@
 		<url-pattern>/logoutCus</url-pattern>
 	
 	</servlet-mapping>
-
-</web-app>
+	
+	
 
 
 
