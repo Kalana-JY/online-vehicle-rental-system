@@ -4,85 +4,85 @@
 
 	<servlet>
 	
-		<servlet-name>addCustomer</servlet-name>
-		<servlet-class>servlet.addCustomer</servlet-class>
+		<servlet-name>AddAdmin</servlet-name>
+		<servlet-class>servlet.AddAdmin</servlet-class>
 	
 	</servlet>
 	
 	<servlet-mapping>
 	
-		<servlet-name>addCustomer</servlet-name>
-		<url-pattern>/addCus</url-pattern>
+		<servlet-name>AddAdmin</servlet-name>
+		<url-pattern>/addAdm</url-pattern>
 	
 	</servlet-mapping>
 	
 	<servlet>
 	
-		<servlet-name>Login</servlet-name>
-		<servlet-class>servlet.Login</servlet-class>
+		<servlet-name>ValidAdmin</servlet-name>
+		<servlet-class>servlet.ValidAdmin</servlet-class>
 	
 	</servlet>
 	
 	<servlet-mapping>
 	
-		<servlet-name>Login</servlet-name>
-		<url-pattern>/logCus</url-pattern>
+		<servlet-name>ValidAdmin</servlet-name>
+		<url-pattern>/logadm</url-pattern>
 	
 	</servlet-mapping>
 	
 	<servlet>
 	
-		<servlet-name>addCustomers</servlet-name>
-		<servlet-class>servlet.addCustomers</servlet-class>
+		<servlet-name>ReadAdmin</servlet-name>
+		<servlet-class>servlet.ReadAdmin</servlet-class>
 	
 	</servlet>
 	
 	<servlet-mapping>
 	
-		<servlet-name>addCustomers</servlet-name>
-		<url-pattern>/cusAdmin</url-pattern>
+		<servlet-name>ReadAdmin</servlet-name>
+		<url-pattern>/readAdm</url-pattern>
 	
 	</servlet-mapping>
 	
 	<servlet>
 	
-		<servlet-name>singleDataButton</servlet-name>
-		<servlet-class>servlet.singleDataButton</servlet-class>
+		<servlet-name>SingleView</servlet-name>
+		<servlet-class>servlet.SingleView</servlet-class>
 	
 	</servlet>
 	
 	<servlet-mapping>
 	
-		<servlet-name>singleDataButton</servlet-name>
-		<url-pattern>/singleButton</url-pattern>
+		<servlet-name>SingleView</servlet-name>
+		<url-pattern>/singleView</url-pattern>
 	
 	</servlet-mapping>
 	
 	<servlet>
 	
-		<servlet-name>updateCustomer</servlet-name>
-		<servlet-class>servlet.updateCustomer</servlet-class>
+		<servlet-name>UpdateAdmin</servlet-name>
+		<servlet-class>servlet.UpdateAdmin</servlet-class>
 	
 	</servlet>
 	
 	<servlet-mapping>
 	
-		<servlet-name>updateCustomer</servlet-name>
-		<url-pattern>/updatecustomer</url-pattern>
+		<servlet-name>UpdateAdmin</servlet-name>
+		<url-pattern>/updateadmin</url-pattern>
 	
 	</servlet-mapping>
 	
 	<servlet>
 	
-		<servlet-name>deleteCustomer</servlet-name>
-		<servlet-class>servlet.deleteCustomer</servlet-class>
+		<servlet-name>DeleteAdmin</servlet-name>
+		<servlet-class>servlet.DeleteAdmin</servlet-class>
 	
 	</servlet>
 	
 	<servlet-mapping>
 	
-		<servlet-name>deleteCustomer</servlet-name>
-		<url-pattern>/deletecustomer</url-pattern>
+		<servlet-name>DeleteAdmin</servlet-name>
+		<url-pattern>/deleteadmin</url-pattern>
 	
 	</servlet-mapping>
 	
