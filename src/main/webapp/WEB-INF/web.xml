@@ -100,7 +100,69 @@
 	
 	</servlet-mapping>
 	
+	<!-- customer -->
 	
+	 <servlet>
+     	<servlet-name>DriverInsertServlet</servlet-name>
+     	<servlet-class>/com.rental.servlet.DriverInsertServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+     	<servlet-name>DriverInsertServlet</servlet-name>
+     	<url-pattern>/DriverInsertServlet</url-pattern>
+     </servlet-mapping>
+     
+     
+    <servlet>
+     	<servlet-name>customerServlet</servlet-name>
+     	<servlet-class>/com.rental.servlet.customerServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+     	<servlet-name>customerServlet</servlet-name>
+     	<url-pattern>/customerServlet</url-pattern>
+     </servlet-mapping>
+     
+     
+     <servlet>
+     	<servlet-name>customerInsert</servlet-name>
+     	<servlet-class>/com.rental.servlet.customerInsert</servlet-class>
+     </servlet>
+     <servlet-mapping>
+     	<servlet-name>customerInsert</servlet-name>
+     	<url-pattern>/customerInsert</url-pattern>
+     </servlet-mapping>
+     
+     
+      <servlet>
+     	<servlet-name>updateCustomerServlet</servlet-name>
+     	<servlet-class>/com.rental.servlet.updateCustomerServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+     	<servlet-name>updateCustomerServlet</servlet-name>
+     	<url-pattern>/updateCustomerServlet</url-pattern>
+     </servlet-mapping>
+     
+
+
+	 <servlet>
+     	<servlet-name>deleteCustomerServlet</servlet-name>
+     	<servlet-class>/com.rental.servlet.deleteCustomerServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+     	<servlet-name>deleteCustomerServlet</servlet-name>
+     	<url-pattern>/deleteCustomerServlet</url-pattern>
+     </servlet-mapping>
+     
+     
+     <servlet>
+     	<servlet-name>paymentServlet</servlet-name>
+     	<servlet-class>/com.rental.servlet.paymentServlet</servlet-class>
+     </servlet>
+     <servlet-mapping>
+     	<servlet-name>paymentServlet</servlet-name>
+     	<url-pattern>/paymentServlet</url-pattern>
+     </servlet-mapping>
+	
+</web-app>	
 
 
 
