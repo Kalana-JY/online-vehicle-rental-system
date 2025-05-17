@@ -172,6 +172,183 @@
      </servlet-mapping>
      
      <!-- customer -->
+     
+     <!-- vehicle owner -->
+     
+     <servlet>
+		<servlet-name>AddOwner</servlet-name>
+		<servlet-class>servlet.AddOwner</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>AddOwner</servlet-name>
+		<url-pattern>/addowner</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>login</servlet-name>
+		<servlet-class>servlet.login</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>login</servlet-name>
+		<url-pattern>/cuslog</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>singleDataButton</servlet-name>
+		<servlet-class>servlet.singleDataButton</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>singleDataButton</servlet-name>
+		<url-pattern>/singlebutton</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>UpdateOwner</servlet-name>
+		<servlet-class>servlet.UpdateOwner</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>UpdateOwner</servlet-name>
+		<url-pattern>/updateown</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeleteOwner</servlet-name>
+		<servlet-class>servlet.DeleteOwner</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DeleteOwner</servlet-name>
+		<url-pattern>/deleteown</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>addVehicle</servlet-name>
+		<servlet-class>servlet.addVehicle</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>addVehicle</servlet-name>
+		<url-pattern>/addvehi</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>addVehicles</servlet-name>
+		<servlet-class>servlet.addVehicles</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>addVehicles</servlet-name>
+		<url-pattern>/vehiadmin</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>vehicleDataButton</servlet-name>
+		<servlet-class>servlet.vehicleDataButton</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>vehicleDataButton</servlet-name>
+		<url-pattern>/vehiclebutton</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>adminVehicle</servlet-name>
+		<servlet-class>servlet.adminVehicle</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>adminVehicle</servlet-name>
+		<url-pattern>/vehiadminn</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>updateVehicle</servlet-name>
+		<servlet-class>servlet.updateVehicle</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>updateVehicle</servlet-name>
+		<url-pattern>/updatevehi</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>deleteVehicle</servlet-name>
+		<servlet-class>servlet.deleteVehicle</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>deleteVehicle</servlet-name>
+		<url-pattern>/deletevehi</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
+	<!-- vehicle owner -->
+	
+	<servlet>
+		<servlet-name>addStaff</servlet-name>
+		<servlet-class>servlet.addStaff</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>addStaff</servlet-name>
+		<url-pattern>/addstf</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>staffLogin</servlet-name>
+		<servlet-class>servlet.staffLogin</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>staffLogin</servlet-name>
+		<url-pattern>/logstf</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>addMessage</servlet-name>
+		<servlet-class>servlet.addMessage</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>addMessage</servlet-name>
+		<url-pattern>/cusmsg</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>messageDisplay</servlet-name>
+		<servlet-class>servlet.messageDisplay</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>messageDisplay</servlet-name>
+		<url-pattern>/dismessage</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>staffUpdate</servlet-name>
+		<servlet-class>servlet.staffUpdate</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>staffUpdate</servlet-name>
+		<url-pattern>/updtstf</url-pattern>
+	</servlet-mapping>
 	
 </web-app>	
 
