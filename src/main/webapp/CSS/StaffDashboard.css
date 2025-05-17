@@ -1,0 +1,126 @@
+.modal{
+	display:none;
+	position:fixed;
+	z-index:1;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color:rgba(0,0,0,0.4);
+}
+.modal-content{
+	background-color:#fefefe;
+	margin:15% auto;
+	padding:20px;
+	border:1px solid #888;
+	width:50%;
+	border-radius:50%;
+}
+
+.close{
+	color:#aaa;
+	float:right;
+	font-size:28px;
+	font-weight:bold;
+	cursor:pointer;
+}
+.reply-form{
+	margin-top:20px;
+}
+.reply-textarea{
+	width:100%;
+	height:150px;
+	margin-bottom:15px;
+	padding:10px;
+	border-radius:4px;
+	border:1px solid #ddd;
+}
+.btn-reply{
+	
+	background-color:#4CAF50;
+	color:white;
+	padding:10px 15px;
+	border:none;
+	border-radius:4px;
+	cursor:pointer;
+	
+}
+.btn-reply:hover{
+	background-color:#45a049;
+}
+
+.btn-reply-cancel{
+	background-color:#f44336;
+	margin-left:10px;
+}
+.btn-reply-cancel:hover{
+	background-color:#d32f2f;
+}
+.vehicle-image{
+	max-width:80px;
+	max-height:60px;
+	border-radius:4px;
+}
+.inquiries-table{
+	display:block;
+}
+
+.vehicles-table{
+	display:none;	
+}
+.btn-active{
+	background-color:#0d6efd;
+	color:white;
+}
+
+.dashboard-header{
+	background-color:#FFD3AC;
+	color:black;
+	padding:15px 0;
+	margin-bottom:20px;
+	text-align:center;
+}
+.sidebar{
+	background-color:white;
+	border-radius: 5px;
+	padding:20px;
+	height:100%;
+	box-shadow:0 2px 10px rgba(0,0,0,0.1);
+	
+}
+.main-content{
+	background-color:white;
+	border-radius:5px;
+	padding:20px;
+	box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+.card{
+	margin-bottom: 20px;
+	box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+.card-header{
+	color:black;
+	font-weight:bold;
+	background-color:#FFD3AC;
+}
+ .profile-section {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .profile-section:last-child {
+            border-bottom: none;
+        }
+        
+        .profile-info {
+            margin-bottom: 10px;
+        }
+        
+        .profile-label {
+            font-weight: bold;
+            color: var(--dark-color);
+            
+            
+            
+        }
