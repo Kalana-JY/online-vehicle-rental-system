@@ -1,6 +1,6 @@
 package com.rental.servlet;
 
-import java.io.IOException;
+import java.io.IOException; 
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,40 +9,45 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.rental.model.Owner;
+import com.rental.services.OwnerService;
 
-@WebServlet("/updateCustomer")
-public class updateCustomer extends HttpServlet {
+
+@WebServlet("/login")
+public class login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    
-    public updateCustomer() {
+ 
+    public login() {
         super();
-        
+       
     }
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	
+	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		com.rental.model.Customer cus = new com.rental.model.Customer();
-		
-		cus.setName(request.getParameter("name"));
-		cus.setAge(Integer.parseInt(request.getParameter("age")));
+		Owner cus = new Owner();
 		cus.setEmail(request.getParameter("email"));
 		cus.setPassword(request.getParameter("password"));
 		
-		com.rental.services.customerService service = new com.rental.services.customerService();
+		OwnerService service = new OwnerService();
+		boolean status = service.validate(cus);
 		
-		service.updateCustomer(cus);
+		if(status) {
+			Owner loginedCus = service.getOne(cus);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("ownerprofile.jsp");
+			request.setAttribute("Owner",loginedCus);
+			dispatcher.forward(request, response);
+		}else {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("ownerLogin.jsp");
+			dispatcher.forward(request, response);
+			
+		}
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("singleData");
 		
-		dispatcher.forward(request, response);
 	}
 
 }

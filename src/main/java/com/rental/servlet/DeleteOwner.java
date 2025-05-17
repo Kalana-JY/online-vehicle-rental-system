@@ -1,6 +1,6 @@
 package com.rental.servlet;
 
-import java.io.IOException;
+import java.io.IOException; 
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,35 +9,32 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.rental.model.Owner;
+import com.rental.services.OwnerService;
 
-@WebServlet("/singleData")
-public class singleData extends HttpServlet {
+
+@WebServlet("/DeleteOwnet")
+public class DeleteOwner extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    
-    public singleData() {
+
+    public DeleteOwner() {
         super();
         
     }
-
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		com.rental.model.Customer customer = new com.rental.model.Customer();
+		Owner cus = new Owner();
+		cus.setEmail(request.getParameter("email"));
 		
-		customer.setEmail(request.getParameter("email"));
-		com.rental.services.customerService service = new com.rental.services.customerService();
+		OwnerService service = new OwnerService();
+		service.deleteCustomer(cus);
 		
-		com.rental.model.Customer cus = service.singleDataButton(customer);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("Profile.jsp");
-		
-		request.setAttribute("customer", cus);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("ownerLogin");
 		
 		dispatcher.forward(request, response);
 	}

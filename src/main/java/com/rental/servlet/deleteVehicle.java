@@ -1,6 +1,6 @@
 package com.rental.servlet;
 
-import java.io.IOException;
+import java.io.IOException; 
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,34 +9,35 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.rental.model.vehicle;
+import com.rental.services.vehicleService;
 
-@WebServlet("/deleteCustomer")
-public class deleteCustomer extends HttpServlet {
+
+@WebServlet("/deleteVehicle")
+public class deleteVehicle extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
-    public deleteCustomer() {
+    public deleteVehicle() {
         super();
-        
+      
     }
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		vehicle vehi = new vehicle();
+		vehi.setEnginenumber(request.getParameter("enginenumber"));
 		
-		com.rental.model.Customer customer = new com.rental.model.Customer();
-		customer.setEmail(request.getParameter("email"));
-		//setAge(Integer.parseInt(request.getParameter("age")));
+		vehicleService service = new vehicleService();
+		service.deleteVehicle(vehi);
 		
-		com.rental.services.customerService service = new com.rental.services.customerService();
-		service.deleteCustomer(customer);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("adminCustomers");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("adminVehicle");
 		dispatcher.forward(request, response);
 	}
 

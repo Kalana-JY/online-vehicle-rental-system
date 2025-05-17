@@ -1,6 +1,6 @@
 package com.rental.servlet;
 
-import java.io.IOException;
+import java.io.IOException; 
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -10,33 +10,32 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.rental.model.vehicle;
+import com.rental.services.vehicleService;
 
-@WebServlet("/adminCustomers")
-public class adminCustomers extends HttpServlet {
+
+@WebServlet("/adminVehicle")
+public class adminVehicle extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-    public adminCustomers() {
-        super();
-        
+         
+    public adminVehicle() {
+        super();      
     }
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		com.rental.services.customerService service = new com.rental.services.customerService();
 		
-		ArrayList<com.rental.model.Customer> Cus = service.getAllCustomer();
-		request.setAttribute("cus", Cus);
+		vehicleService service = new vehicleService();
+		ArrayList<vehicle> vehicle = service.getAllVehicle();
+		request.setAttribute("vehicle", vehicle);
 		
-		RequestDispatcher dispacher = request.getRequestDispatcher("Admin.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("vehicleprofile.jsp");
 		
-		dispacher.forward(request, response);
+		dispatcher.forward(request, response);
 	}
 
 }

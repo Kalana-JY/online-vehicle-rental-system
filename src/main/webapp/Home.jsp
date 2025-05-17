@@ -28,7 +28,16 @@
                     <a href="#" class="btn btn-warning">Explore Vehicles</a>
                 </div>
                 <!-- Image on the Right -->
+
                 <!-- Image on the Right -->
+
+
+                <!-- Image on the Right -->
+                <!-- Image on the Right -->
+
+
+
+
                 <div class="col-md-6 text-center">
                     <img src="Images/carplus.png" alt="Dream Vehicle" class="img-fluid">
                 </div>
@@ -74,15 +83,17 @@
 			<input type="time" class="form-control" id="rTime" placeholder="" onfocus="this.showPicker()" required>
 			</div>
 		</div>
-		<div class="col -md 1 d-flex align-items-end">
-			<button type="submit" class="btn btn-warning fw-bold ms-3"><i class="bi bi-search"></i></button>
+		<div class="col-md-1 d-flex align-items-end">
+  			<button type="submit" class="btn btn-warning fw-bold ms-3" formaction="searchResult.jsp">
+    			<i class="bi bi-search"></i>
+  			</button>
 		</div>
 	</form>
 	</div>
 	</div>
 	
-	<div>
-		<h4 class="fw-default text-dark mb-1" style="padding: 10px 50px;">Vehicle Categories</h4>
+	 <%--<div class="container-fluid">
+		<h4 class="fw-bold text-dark mb-3 py-3">Vehicle Categories</h4>
 		<section class="bg-light py-1">
 		<div class="catCard">
 		<div class="row g-2">
@@ -109,11 +120,49 @@
 		</div>
 		</div>
 		</section>
-	</div>
+	</div>--%>
 	
 	<div>
+    <h4 class="fw-default text-dark mb-1" style="padding: 10px 50px;">Vehicle Categories</h4>
+    <section class="bg-light py-1 text-center">
+    <div class="row justify-content-center g-3">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card1">
+          <h6 class="mb-2 pt-2">Sedan</h6>
+          <img src="Images/sedan.svg" class="img-fluid" alt="Sedan">
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card1">
+          <h6 class="mb-2 pt-2">Hatchback</h6>
+          <img src="Images/compact.svg" class="img-fluid" alt="Hatchback">
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card1">
+          <h6 class="mb-2 pt-2">Van</h6>
+          <img src="Images/van.svg" class="img-fluid" alt="Van">
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card1">
+          <h6 class="mb-2 pt-2">Pickup Truck</h6>
+          <img src="Images/pickup.svg" class="img-fluid" alt="Pickup Truck">
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+        <div class="card1">
+          <h6 class="mb-2 pt-2">SUV</h6>
+          <img src="Images/suv.svg" class="img-fluid" alt="SUV">
+        </div>
+      </div>
+    </div>
+    </section>
+  </div>
+	
+	<%-- <div>
 	<h4 class="fw-default text-dark mb-1" style="padding: 10px 50px;">Popular Vehicles</h4>
-	<section class="bg-light py-1">
+	<section class="bg-light py-1 d-flex">
 	<div class="pmCard">
 	<div class="row g-2">	
 	<div class="card1" style="width: 18rem;">
@@ -185,7 +234,82 @@
 	</div>
 	</div>
 	</section>
-	</div>	
+	</div>	--%>
+	
+	<div>
+  <h4 class="fw-default text-dark mb-1" style="padding: 10px 50px;">Popular Vehicles</h4>
+  <section class="bg-light py-3 d-flex justify-content-center">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+
+        <div class="card bg-secondary bg-opacity-25 text-center mb-6 ml-4" style="width: 18rem;">
+          <img src="Images/camryex.png" class="card-img-top p-3" alt="Toyota Camry">
+          <div class="card-body">
+            <h5 class="card-title">Toyota Camry SE 350</h5>
+            <div class="row g-2 justify-content-center">
+              <div class="col-4">
+                <img src="Images/gear.png" class="img-fluid" style="height: 24px; width: 24px;" alt="Auto">
+                <p>Auto</p>
+              </div>
+              <div class="col-4">
+                <img src="Images/petrol.png" class="img-fluid" style="height: 24px; width: 24px;" alt="Petrol">
+                <p>Petrol</p>
+              </div>
+              <div class="col-4">
+                <img src="Images/seat.png" class="img-fluid" style="height: 24px; width: 24px;" alt="Seats">
+                <p>5</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-secondary bg-opacity-25 text-center mb-6 ml-4" style="width: 18rem;">
+          <img src="Images/hiaceex.png" class="card-img-top p-3" alt="Toyota Hiace">
+          <div class="card-body">
+            <h5 class="card-title">Toyota Hiace</h5>
+            <div class="row g-2 justify-content-center">
+              <div class="col-4">
+                <img src="Images/gear.png" class="img-fluid" style="height: 24px; width: 24px;" alt="Auto">
+                <p>Auto</p>
+              </div>
+              <div class="col-4">
+                <img src="Images/petrol.png" class="img-fluid" style="height: 24px; width: 24px;" alt="Petrol">
+                <p>Petrol</p>
+              </div>
+              <div class="col-4">
+                <img src="Images/seat.png" class="img-fluid" style="height: 24px; width: 24px;" alt="Seats">
+                <p>12</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-secondary bg-opacity-25 text-center mb-6 ml-4" style="width: 18rem;">
+          <img src="Images/raptorex.png" class="card-img-top p-3" alt="Ford Raptor">
+          <div class="card-body">
+            <h5 class="card-title">Ford Raptor Crewmax 4X4</h5>
+            <div class="row g-2 justify-content-center">
+              <div class="col-4">
+                <img src="Images/gear.png" class="img-fluid" style="height: 24px; width: 24px;" alt="Auto">
+                <p>Auto</p>
+              </div>
+              <div class="col-4">
+                <img src="Images/petrol.png" class="img-fluid" style="height: 24px; width: 24px;" alt="Petrol">
+                <p>Petrol</p>
+              </div>
+              <div class="col-4">
+                <img src="Images/seat.png" class="img-fluid" style="height: 24px; width: 24px;" alt="Seats">
+                <p>5</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+	
 	
 	<div>
 		<h4 class="fw-default text-dark mb-1" style="padding: 10px 50px;">Why Rent With Us?</h4>
@@ -236,8 +360,8 @@
                 <div class="col-md-5 text-center text-md-start mt-3 mt-md-0">
                     <div class="card border-0 bg-transparent">
                         <div class="card-body">
-                            <h2 class="fw-default text-dark mb-3">Turn Your Car into Earnings!</h4>
-                            <h3 class="fw-semibold mb-3">Rent It Out Today!</h5>
+                            <h2 class="fw-default text-dark mb-3">Turn Your Car into Earnings!</h2>
+                            <h3 class="fw-semibold mb-3">Rent It Out Today!</h3>
                             <p class="text-muted mb-4">List your vehicle on our platform and start making money effortlessly. Secure, reliable, and hassle-free!</p>
                             
                             <button class="btn btn-warning">Register Your Vehicle Now</button>
