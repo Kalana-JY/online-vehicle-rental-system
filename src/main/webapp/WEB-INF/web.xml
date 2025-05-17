@@ -329,13 +329,13 @@
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>messageDisplay</servlet-name>
-		<servlet-class>servlet.messageDisplay</servlet-class>
+		<servlet-name>displayMessage</servlet-name>
+		<servlet-class>servlet.displayMessage</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
 	
-		<servlet-name>messageDisplay</servlet-name>
+		<servlet-name>displayMessage</servlet-name>
 		<url-pattern>/dismessage</url-pattern>
 	</servlet-mapping>
 	

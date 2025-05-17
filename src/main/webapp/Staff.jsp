@@ -85,7 +85,7 @@
 							<button id="viewVehiclesBtn" class="btn btn-outline-primary view-vehicle" onclick="toggleTables('vehicles')">
 							<i class="fas fa-car"></i>View Vehicles
 							</button>
-							<form action="messageDisplay" method="post">
+							<form action="displayMessage" method="post">
 							<button type="submit" id="viewInquriesBtn" class="btn btn-outline-primary btn-sm btn-active" >
 							View Inquiries
 							</button>
