@@ -104,62 +104,71 @@
 	
 	 <servlet>
      	<servlet-name>DriverInsertServlet</servlet-name>
-     	<servlet-class>/com.rental.servlet.DriverInsertServlet</servlet-class>
+     	<servlet-class>servlet.DriverInsertServlet</servlet-class>
      </servlet>
      <servlet-mapping>
      	<servlet-name>DriverInsertServlet</servlet-name>
-     	<url-pattern>/DriverInsertServlet</url-pattern>
+     	<url-pattern>/driverinsertservlet</url-pattern>
      </servlet-mapping>
      
      
     <servlet>
      	<servlet-name>customerServlet</servlet-name>
-     	<servlet-class>/com.rental.servlet.customerServlet</servlet-class>
+     	<servlet-class>servlet.customerServlet</servlet-class>
      </servlet>
      <servlet-mapping>
      	<servlet-name>customerServlet</servlet-name>
-     	<url-pattern>/customerServlet</url-pattern>
+     	<url-pattern>/customerservlet</url-pattern>
      </servlet-mapping>
      
      
      <servlet>
      	<servlet-name>customerInsert</servlet-name>
-     	<servlet-class>/com.rental.servlet.customerInsert</servlet-class>
+     	<servlet-class>servlet.customerInsert</servlet-class>
      </servlet>
      <servlet-mapping>
      	<servlet-name>customerInsert</servlet-name>
-     	<url-pattern>/customerInsert</url-pattern>
+     	<url-pattern>/customerinsert</url-pattern>
      </servlet-mapping>
      
      
       <servlet>
      	<servlet-name>updateCustomerServlet</servlet-name>
-     	<servlet-class>/com.rental.servlet.updateCustomerServlet</servlet-class>
+     	<servlet-class>servlet.updateCustomerServlet</servlet-class>
      </servlet>
      <servlet-mapping>
      	<servlet-name>updateCustomerServlet</servlet-name>
-     	<url-pattern>/updateCustomerServlet</url-pattern>
+     	<url-pattern>/updatecustomerservlet</url-pattern>
      </servlet-mapping>
      
 
 
 	 <servlet>
      	<servlet-name>deleteCustomerServlet</servlet-name>
-     	<servlet-class>/com.rental.servlet.deleteCustomerServlet</servlet-class>
+     	<servlet-class>servlet.deleteCustomerServlet</servlet-class>
      </servlet>
      <servlet-mapping>
      	<servlet-name>deleteCustomerServlet</servlet-name>
-     	<url-pattern>/deleteCustomerServlet</url-pattern>
+     	<url-pattern>/deletecustomerservlet</url-pattern>
      </servlet-mapping>
      
      
      <servlet>
      	<servlet-name>paymentServlet</servlet-name>
-     	<servlet-class>/com.rental.servlet.paymentServlet</servlet-class>
+     	<servlet-class>servlet.paymentServlet</servlet-class>
      </servlet>
      <servlet-mapping>
      	<servlet-name>paymentServlet</servlet-name>
-     	<url-pattern>/paymentServlet</url-pattern>
+     	<url-pattern>/paymentservlet</url-pattern>
+     </servlet-mapping>
+     
+     <servlet>
+     	<servlet-name>customerRead</servlet-name>
+     	<servlet-class>servlet.customerRead</servlet-class>
+     </servlet>
+     <servlet-mapping>
+     	<servlet-name>customerRead</servlet-name>
+     	<url-pattern>/customerread</url-pattern>
      </servlet-mapping>
 	
 </web-app>	

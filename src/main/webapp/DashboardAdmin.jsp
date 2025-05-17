@@ -88,9 +88,11 @@
 	<div id="cm" class="container p-3 my-3 border rounded" style='background-color: #a8b6cd;'>
 		<div class="d-flex justify-content-between align-items-center mb-2">
 			<h3>Customer Management</h3>
-			<button type="button" class="btn btn-success m-1" data-bs-toggle="collapse" data-bs-target="#customerTableSection" aria-expanded="false" aria-controls="customerTableSection"> Show All Customer</button>
+			<form action="customerRead" method="post">
+			<button type="submit" class="btn btn-success m-1" data-bs-toggle="collapse" data-bs-target="#customerTableSection" aria-expanded="false" aria-controls="customerTableSection"> Show All Customer</button>
+			</form>
 		</div>
-		<div class="collapse" id="customerTableSection">
+		<div id="customerTableSection" class="collapse ${not empty cusDetails ? 'show' : ''}">
 			<div class="m-2">
 				<form action="customerController" method="get">
 					<input type="hidden" name="action" value="search">
@@ -104,25 +106,23 @@
 				<table class="table table-bordered">
 	  				<thead>
 	    				<tr>
-	      					<th scope="col">Name</th>
-	      					<th scope="col">Age</th>
+	    					<th scope="col">ID</th>
+	      					<th scope="col">First Name</th>
+	      					<th scope="col">Last Name</th>
 	      					<th scope="col">Email</th>
 	      					<th scope="col">Password</th>
+	      					<th scope="col">Actions</th>
 	    				</tr>
 	  				</thead>
 	  				<tbody>
-	  					<c:forEach var="customer" items="${cus}">
+	  					<c:forEach var="customer" items="${cusDetails}">
 	  					<tr>
-	  						<td>${customer.name}</td>
-	  						<td>${customer.age}</td>
+	  						<td>${customer.id}</td>
+	  						<td>${customer.firstname}</td>
+	  						<td>${customer.lastname}</td>
 	  						<td>${customer.email}</td>
 	  						<td>${customer.password}</td>
-	  						<td>
-	  							<form action="singleData" method="post">
-	  								<input type="hidden" name="email" value="${customer.email}">
-	  								<button type="submit">View</button>
-	  							</form>
-	  						</td>
+	  						
 	  						<td>
 	  							<form action="deleteCustomer" method="post">
 	  								<input type="hidden" name="email" value="${customer.email}">
