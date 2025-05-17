@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 
 
 import java.sql.Statement;
-import java.util.ArrayList;
+
 
 import com.rental.model.*;
 
@@ -85,28 +85,7 @@ public class staffService {
 		return null;
 	}
 	
-	public ArrayList<messages>getAllMessages(){
-		try {
-			ArrayList<messages> listMsg=new ArrayList<>();
-			
-			String query="select * from messages";
-			
-			Statement statement=DBConnect.getConnection().createStatement();
-			ResultSet rs=statement.executeQuery(query);
-			while(rs.next()) {
-				messages msg=new messages();
-				msg.setEmail(rs.getString("email"));	
-				msg.setName(rs.getString("name"));
-				msg.setPhone(rs.getString("phone"));
-				msg.setMessage(rs.getString("message"));
-				listMsg.add(msg);
-			}
-			return listMsg;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
+
 	
 	public void updateStaff(staff staff) {
 		

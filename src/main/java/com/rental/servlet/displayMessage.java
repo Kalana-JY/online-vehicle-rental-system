@@ -15,14 +15,14 @@ import com.rental.model.*;
 import com.rental.services.*;
 
 
-@WebServlet("/messageDisplay")
-public class messageDisplay extends HttpServlet {
+@WebServlet("/displayMessage")
+public class displayMessage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-    public messageDisplay() {
+    public displayMessage() {
         super();
-        
+       
     }
 
 
@@ -34,13 +34,13 @@ public class messageDisplay extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		staffService sf=new staffService();
-		ArrayList<messages> messages=sf.getAllMessages();
-		request.setAttribute("cusMessages",messages);
+		messageService service=new messageService();
+		ArrayList<messages> messages=service.getAllMessages();
+		request.setAttribute("cusMessages", messages);
 		
+		RequestDispatcher dispatcher=request.getRequestDispatcher("Staff.jsp");
 		
-		RequestDispatcher dispacher=request.getRequestDispatcher("Staff.jsp");
-		dispacher.forward(request, response);
+		dispatcher.forward(request, response);
 	}
 
 }
