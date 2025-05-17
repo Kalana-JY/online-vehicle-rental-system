@@ -20,6 +20,16 @@ public class Customer extends User{
 		this.firstname = firstname;
 		this.lastname = lastname;
 	}
+	
+
+	public Customer(int id, String firstname, String lastname, String email, String password) {
+		super();
+		this.id = id;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
+	}
 
 
 	public String getFirstname() {
