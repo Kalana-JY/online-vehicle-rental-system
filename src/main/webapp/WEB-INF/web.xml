@@ -170,6 +170,8 @@
      	<servlet-name>customerRead</servlet-name>
      	<url-pattern>/customerread</url-pattern>
      </servlet-mapping>
+     
+     <!-- customer -->
 	
 </web-app>	
 

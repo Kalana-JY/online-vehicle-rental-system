@@ -91,7 +91,7 @@ public class customerServlet extends HttpServlet {
             PrintWriter out = response.getWriter();
             out.println("<script type='text/javascript'>");
             out.println("alert('Your email or password is incorrect');");
-            out.println("location='login.jsp';");
+            out.println("location='customerLogin.jsp';");
             out.println("</script>");
         }
     }

@@ -34,7 +34,7 @@ public class deleteCustomerServlet extends HttpServlet {
 			List<Customer> cusDetails = customerDBUtil.getCustomerDetails(id);
 			request.setAttribute("cusDetails", cusDetails);
 			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("dummyProfile.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("customerProfile.jsp");
 			dispatcher.forward(request, response);
 		}
 		

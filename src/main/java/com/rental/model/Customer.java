@@ -1,18 +1,25 @@
 package com.rental.model;
 
-public class Customer {
-	private int id;
+//Customer class extending User
+public class Customer extends User{
+	
 	private String firstname;
 	private String lastname;
-	private String email;
-	private String password;
 	
-	
-	
-	public int getId() {
-		return id;
-	}
 
+	//Default Constructor
+	public Customer() {   
+		this.firstname = "";
+		this.lastname = "";
+	}
+	
+	
+	//Parameterized Constructor
+	public Customer(int id, String name, String email, String password, String firstname, String lastname) {
+		super(id, name, email, password);
+		this.firstname = firstname;
+		this.lastname = lastname;
+	}
 
 
 	public String getFirstname() {
@@ -20,33 +27,8 @@ public class Customer {
 	}
 
 
-
 	public String getLastname() {
 		return lastname;
 	}
-
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-
-	public Customer(int id, String firstname, String lastname, String email, String password) {
-
-		this.id = id;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.email = email;
-		this.password = password;
-	}
-
 
 }
