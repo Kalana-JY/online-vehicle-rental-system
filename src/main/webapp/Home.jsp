@@ -79,8 +79,10 @@
 			<input type="time" class="form-control" id="rTime" placeholder="" onfocus="this.showPicker()" required>
 			</div>
 		</div>
-		<div class="col -md 1 d-flex align-items-end">
-			<button type="submit" class="btn btn-warning fw-bold ms-3"><i class="bi bi-search"></i></button>
+		<div class="col-md-1 d-flex align-items-end">
+  			<button type="submit" class="btn btn-warning fw-bold ms-3" formaction="searchResult.jsp">
+    			<i class="bi bi-search"></i>
+  			</button>
 		</div>
 	</form>
 	</div>
