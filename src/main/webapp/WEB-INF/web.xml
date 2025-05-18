@@ -293,7 +293,19 @@
 		<url-pattern>/deletevehi</url-pattern> <!-- give unique name -->
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>ownerRead</servlet-name>
+		<servlet-class>servlet.ownerRead</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ownerRead</servlet-name>
+		<url-pattern>/ownerread</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
 	<!-- vehicle owner -->
+	
+	<!-- staff -->
 	
 	<servlet>
 		<servlet-name>addStaff</servlet-name>
@@ -325,7 +337,7 @@
 	<servlet-mapping>
 	
 		<servlet-name>addMessage</servlet-name>
-		<url-pattern>/cusmsg</url-pattern>
+		<url-pattern>/addmessage</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -360,6 +372,30 @@
 	<servlet-name>displayVehicle</servlet-name>
 	<url-pattern>/disvehi</url-pattern>
 </servlet-mapping>
+
+	<servlet>
+		<servlet-name>staffRead</servlet-name>
+		<servlet-class>servlet.staffRead</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>staffRead</servlet-name>
+		<url-pattern>/staffread</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>deleteStaff</servlet-name>
+		<servlet-class>servlet.deleteStaff</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>deleteStaff</servlet-name>
+		<url-pattern>/deletestaff</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
+	<!-- staff -->
+
 	
 </web-app>	
 

@@ -14,7 +14,7 @@
 <body style='background-color: #bbd0ff;'>
 <div class="d-flex min-vh-100">
 		<nav class="sidebar d-flex flex-column flex-shrink-0 p-3" style="width: 280px; background-color: #1f2937;">
-	        <a href="Admin.jsp" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+	        <a href="DashboardAdmin.jsp" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
 	            <img src="Images/svg (1).svg" alt="Logo" class="img-fluid me-2" width="50">
 	            <span class="fs-4">Admin Panel</span>
 	        </a>
@@ -124,8 +124,8 @@
 	  						<td>${customer.password}</td>
 	  						
 	  						<td>
-	  							<form action="deleteCustomer" method="post">
-	  								<input type="hidden" name="email" value="${customer.email}">
+	  							<form action="deleteCustomerServlet" method="post">
+	  								<input type="hidden" name="id" value="${customer.id}">
 	  								<button type="submit" class="btn btn-danger">Delete</button>
 	  							</form>
 	  						</td>
@@ -140,35 +140,40 @@
 	<div id="vom" class="container p-3 my-3 border rounded" style='background-color: #a8b6cd;'>
 		<div class="d-flex justify-content-between align-items-center mb-2">
 			<h3>Vehicle Owner Management</h3>
-				<button type="button" class="btn btn-success m-1" data-bs-toggle="collapse" data-bs-target="#voTableSection" aria-expanded="false" aria-controls="voTableSection"> Show All Owners</button>
+			<form action="ownerRead" method="post">
+				<button type="submit" class="btn btn-success m-1" data-bs-toggle="collapse" data-bs-target="#voTableSection" aria-expanded="false" aria-controls="voTableSection"> Show All Owners</button>
+			</form>	
 		</div>
-		<div class="collapse" id="voTableSection">
+		<div id="voTableSection" class="collapse ${not empty ownerDetails ? 'show' : ''}">
 			<div class="scrollable-table">
 				<table class="table table-bordered">
 	  				<thead>
 	    				<tr>
 					      <th scope="col">Name</th>
-					      <th scope="col">Age</th>
 					      <th scope="col">Email</th>
 					      <th scope="col">Password</th>
+					      <th scope="col">Address</th>
+					      <th scope="col">City</th>
+					      <th scope="col">Gender</th>
+					      <th scope="col">ID Number</th>
+					      <th scope="col">Contact No</th>
+					      <th scope="col">Actions</th>
 					    </tr>
 	  				</thead>
 	  				<tbody>
-					  	<c:forEach var="customer" items="${cus}">
+					  	<c:forEach var="owner" items="${ownerDetails}">
 					  		<tr>
-					  			<td>${customer.name}</td>
-					  			<td>${customer.age}</td>
-					  			<td>${customer.email}</td>
-					  			<td>${customer.password}</td>
+					  			<td>${owner.name}</td>
+					  			<td>${owner.email}</td>
+					  			<td>${owner.password}</td>
+					  			<td>${owner.address}</td>
+					  			<td>${owner.city}</td>
+					  			<td>${owner.gender}</td>
+					  			<td>${owner.idnumber}</td>
+					  			<td>${owner.contactno}</td>
 					  			<td>
-					  				<form action="singleData" method="post">
-					  					<input type="hidden" name="email" value="${customer.email}">
-					  					<button type="submit">View</button>
-					  				</form>
-					  			</td>
-					  			<td>
-					  				<form action="deleteCustomer" method="post">
-					  					<input type="hidden" name="email" value="${customer.email}">
+					  				<form action="DeleteOwner" method="post">
+					  					<input type="hidden" name="email" value="${owner.email}">
 					  					<button type="submit" class="btn btn-danger">Delete</button>
 					  				</form>
 					  			</td>
@@ -181,46 +186,53 @@
 	</div>
 	
 	<div id="vm" class="container p-3 my-3 border rounded" style='background-color: #a8b6cd;'>
-		<div class="d-flex justify-content-between align-items-center mb-2">
-			<h3>Vehicle Management</h3>
-				<button type="button" class="btn btn-success m-1" data-bs-toggle="collapse" data-bs-target="#vehiTableSection" aria-expanded="false" aria-controls="vehiTableSection"> Show All Vehicles</button>
-		</div>
-		<div class="collapse" id="vehiTableSection">
-			<div class="scrollable-table">
-				<table class="table table-bordered">
-					<thead>
-	    				<tr>
-					      <th scope="col">Name</th>
-					      <th scope="col">Age</th>
-					      <th scope="col">Email</th>
-					      <th scope="col">Password</th>
-	    				</tr>
-	    			</thead>
-	  				<tbody>
-					  	<c:forEach var="customer" items="${cus}">
-					  		<tr>
-					  			<td>${customer.name}</td>
-					  			<td>${customer.age}</td>
-					  			<td>${customer.email}</td>
-					  			<td>${customer.password}</td>
-					  			<td>
-					  				<form action="singleData" method="post">
-					  					<input type="hidden" name="email" value="${customer.email}">
-					  					<button type="submit">View</button>
-					  				</form>
-					  			</td>
-					  			<td>
-					  				<form action="deleteCustomer" method="post">
-					  					<input type="hidden" name="email" value="${customer.email}">
-					  					<button type="submit" class="btn btn-danger">Delete</button>
-					  				</form>
-					  			</td>
-					  		</tr>
-					  	</c:forEach>
-	  				</tbody>
-				</table>
-			</div>
-		</div>
+	    <div class="d-flex justify-content-between align-items-center mb-2">
+	        <h3>Vehicle Management</h3>
+	        <form action="vehicleRead" method="post">
+	            <button type="submit" class="btn btn-success m-1" data-bs-toggle="collapse" data-bs-target="#vehiTableSection" aria-expanded="false" aria-controls="vehiTableSection">Show All Vehicles</button>
+	        </form>    
+	    </div>
+	    <div id="vehiTableSection" class="collapse ${not empty vehicle ? 'show' : ''}">
+	        <div class="scrollable-table">
+	            <table class="table table-bordered">
+	                <thead>
+	                    <tr>
+	                        <th scope="col">Vehicle Type</th>
+	                        <th scope="col">Transmission Type</th>
+	                        <th scope="col">Vehicle Number</th>
+	                        <th scope="col">Vehicle Color</th>
+	                        <th scope="col">Engine Number</th>
+	                        <th scope="col">Seating Capacity</th>
+	                        <th scope="col">Fuel Type</th>
+	                        <th scope="col">Actions</th>
+	                    </tr>
+	                </thead>
+	                <tbody>
+	                    <c:forEach var="vehi" items="${vehicle}">
+	                        <tr>
+	                            <td>${vehi.vehicletype}</td>
+	                            <td>${vehi.transmissiontype}</td>
+	                            <td>${vehi.vehiclenumber}</td>
+	                            <td>${vehi.vehiclecolor}</td>
+	                            <td>${vehi.enginenumber}</td>
+	                            <td>${vehi.seatingcapacity}</td>
+	                            <td>${vehi.fueltype}</td>
+	                            <td class="d-flex">
+	                                <form action="vehicleDataButton" method="post" class="me-2">
+	                                    <input type="hidden" name="enginenumber" value="${vehi.enginenumber}">
+	                                    <button type="submit" class="btn btn-primary">View</button>
+	                                </form>
+	                                <form action="deleteVehicle" method="post">
+	                                    <input type="hidden" name="enginenumber" value="${vehi.enginenumber}">
+	                                    <button type="submit" class="btn btn-danger">Delete</button>
+	                                </form>
+	                            </td>
+	                        </tr>
+	                    </c:forEach>
+	                </tbody>
+	            </table>
+	        </div>
+	    </div>
 	</div>
 	
 	<div id="sm" class="container p-3 my-3 border rounded" style='background-color: #a8b6cd;'>
@@ -234,7 +246,7 @@
 		<div class="collapse" id="staffTableSection">
 			<div class="d-flex justify-content-end align-items-center mb-2">
 				<button type="submit" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#addStaffModal">Add +</button>
-					<form action="ReadStaff" method="post">
+					<form action="staffRead" method="post">
 						<button type="submit" class="btn btn-success m-1">Load Staff</button>
 					</form>
 			</div>
@@ -242,28 +254,24 @@
 				<table class="table table-bordered text center">
 	  				<thead>
 	    				<tr>
-					     	<th scope="col">ID</th>
-					      	<th scope="col">Name</th>
 					      	<th scope="col">Email</th>
+					      	<th scope="col">Name</th>
 					      	<th scope="col">Password</th>
-					      	<th scope="col">File Name</th>
 					      	<th scope="col">Actions</th>
 					   	</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="staff" items="${cus}">
+						<c:forEach var="staff" items="${stfDetails}">
 					  		<tr>
-					  			<td>${staff.id}</td>
-					  			<td>${staff.name}</td>
 					  			<td>${staff.email}</td>
+					  			<td>${staff.name}</td>
 					  			<td>${staff.password}</td>
-					  			<td>${staff.fileName}</td>
 					  			<td class="d-flex">
 					  			
-					  				<button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#editAdminModal" onclick="setEditFormData('${staff.id}', '${staff.name}', '${staff.email}', '${staff.password}', '${staff.fileName}')">Edit</button>
+					  				<button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#editStaffModal" onclick="setEditFormData('${staff.email}', '${staff.name}', '${staff.password}')">Edit</button>
 					  			
-					  				<form action="deleteCustomer" method="post">
-					  					<input type="hidden" name="email" value="${customer.email}">
+					  				<form action="staffDelete" method="post">
+					  					<input type="hidden" name="email" value="${staff.email}">
 					  					<button type="submit" class="btn btn-danger">Delete</button>
 					  				</form>
 					  			</td>
@@ -333,6 +341,7 @@
 	<%@ include file="AddAdmin.jsp" %>
 	<%@ include file="AddStaff.jsp" %>
 	<%@ include file="ProfileAdmin.jsp" %>
+	<%@ include file="EditStaffAdmin.jsp" %>
 	
 	
 	</div>

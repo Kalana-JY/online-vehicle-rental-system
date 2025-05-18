@@ -1,6 +1,8 @@
 package com.rental.services;
 
-import java.sql.ResultSet;
+import java.sql.ResultSet; 
+
+
 
 
 
@@ -9,9 +11,12 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.rental.model.*;
+import java.sql.Statement;
+import java.util.ArrayList;
 
-import com.rental.utils.*;
+import com.rental.model.staff;
+import com.rental.model.vehicle;
+import com.rental.utils.DBConnect;
 
 
 
@@ -49,20 +54,6 @@ public class staffService {
 			
 		}
 		return false;
-	}
-	
-	public void sendmsg(messages msg) {
-		try {
-			
-			String query="insert into messages values('"+msg.getEmail()+"','"+msg.getName()+"','"+msg.getPhone()+"','"+msg.getMessage()+"')";
-			
-			Statement statement= DBConnect.getConnection().createStatement();
-			statement.executeUpdate(query);
-			
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}
 	}
 	
 	public staff getOne(staff stf) {
@@ -105,7 +96,9 @@ public class staffService {
 		}
 	}
 	
+
 	public ArrayList<vehicle> getAllVehicle(){
+
 		try {
 			ArrayList<vehicle>listVehi=new ArrayList<vehicle>();
 			
@@ -133,8 +126,52 @@ public class staffService {
 			e.printStackTrace();
 			
 			return null;
-			
+		}	
 		}
+
+	public ArrayList<staff> getAllStaff() {
+		
+		try {
+			
+			ArrayList<com.rental.model.staff> listStaff = new ArrayList<com.rental.model.staff>();
+			
+			String query = "SELECT * FROM staff";
+			
+			Statement statement = com.rental.utils.DBConnect.getConnection().createStatement();
+			ResultSet rs = statement.executeQuery(query);
+			
+			while(rs.next()) {
+				com.rental.model.staff stf = new com.rental.model.staff();
+				stf.setEmail(rs.getString("email"));
+				stf.setName(rs.getString("name"));
+				stf.setPassword(rs.getString("password"));
+				listStaff.add(stf);
+			}
+			
+			return listStaff;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+	
+	public void deleteStaff(com.rental.model.staff stf) {
+		try {
+			
+			com.rental.model.staff staff = new com.rental.model.staff();
+			
+			String query = "DELETE FROM admin WHERE email = '"+staff.getEmail()+"'";
+			
+			Statement statement = com.rental.utils.DBConnect.getConnection().createStatement();
+			statement.executeUpdate(query);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+
 	}
 	
 }

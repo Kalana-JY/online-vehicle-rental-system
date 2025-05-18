@@ -1,6 +1,6 @@
 package com.rental.servlet;
 
-import java.io.IOException;
+import java.io.IOException; 
 
 
 
@@ -11,8 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.rental.model.*;
-import com.rental.services.*;
+import com.rental.model.messages;
 
 
 @WebServlet("/addMessage")
@@ -41,7 +40,7 @@ public class addMessage extends HttpServlet {
 		msg.setPhone(request.getParameter("phoneNo"));
 		msg.setMessage(request.getParameter("message"));
 		
-		staffService service=new staffService();
+		com.rental.services.messageService service=new com.rental.services.messageService();
 		service.sendmsg(msg);
 		
 		RequestDispatcher dispatcher=request.getRequestDispatcher("Home.jsp");

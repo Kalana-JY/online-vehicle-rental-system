@@ -91,21 +91,12 @@
                 </form>
             </div>
 
-            <!-- Navigation Buttons -->
-            <div class="flex flex-col justify-center items-center gap-4 mt-6">
-                <!-- Vehicle Details -->
-                <form action="adminVehicles" method="post" class="w-full sm:w-auto">
+            <!-- Vehicle Details Button -->
+            <div class="flex justify-start mt-6">
+                <form action="adminVehicles" method="post">
                     <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-lg w-full sm:w-auto">
+                            class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-lg transition">
                         <i class="fa-solid fa-car mr-2"></i>Vehicle Details
-                    </button>
-                </form>
-
-                <!-- Add Vehicle -->
-                <form action="newVehicle.jsp" method="post" class="w-full sm:w-auto">
-                    <button type="submit"
-                            class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-lg w-full sm:w-auto">
-                        <i class="fa-solid fa-plus mr-2"></i>Add Vehicle
                     </button>
                 </form>
             </div>

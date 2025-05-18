@@ -43,7 +43,7 @@ public class addStaff extends HttpServlet {
 		staffService service=new staffService();
 		service.regStaff(stf);
 		
-		RequestDispatcher dispatcher=request.getRequestDispatcher("staffLogin.jsp");
+		RequestDispatcher dispatcher=request.getRequestDispatcher("DashboardAdmin.jsp");
 		
 		dispatcher.forward(request, response);
 	}

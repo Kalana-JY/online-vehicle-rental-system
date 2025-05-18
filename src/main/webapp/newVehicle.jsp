@@ -8,25 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3498db',
-                        dark: '#2c3e50',
-                    }
-                }
-            }
-        };
-    </script>
 </head>
 <body class="bg-gray-100 text-gray-800">
 <%@ include file="/Partials/Header.jsp" %>
 
 <div class="max-w-2xl mx-auto mt-10 bg-white p-8 rounded-xl shadow-lg">
-    <h2 class="text-2xl font-bold text-primary flex items-center gap-2 border-b pb-4">
+    <h2 class="text-2xl font-bold text-orange-500 flex items-center gap-2 border-b pb-4">
         <i class="fa-solid fa-car-side"></i>
         Add Vehicle
     </h2>
@@ -81,9 +68,12 @@
                 <option value="4">4</option>
                 <option value="6">6</option>
                 <option value="8">8</option>
+                <option value="8">15</option>
+                <option value="8">24</option>
             </select>
         </div>
 
+        
         <!-- Fuel Type -->
         <div>
             <label class="font-semibold block mb-1"><i class="fa-solid fa-gas-pump mr-1"></i>Fuel Type</label>
@@ -105,7 +95,7 @@
 
         <!-- Submit Button -->
         <div class="text-right">
-            <button type="submit" class="bg-primary text-white px-6 py-2 rounded hover:bg-blue-700 transition">
+            <button type="submit" class="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-600 transition">
                 <i class="fa-solid fa-plus mr-1"></i>Add Vehicle
             </button>
         </div>
@@ -129,7 +119,7 @@
             const reader = new FileReader();
             reader.onload = function (event) {
                 const preview = document.getElementById('imagePreview');
-                preview.innerHTML = `<img src="${event.target.result}" class="max-w-[200px] max-h-[200px] border rounded shadow">`;
+                preview.innerHTML = <img src="${event.target.result}" class="max-w-[200px] max-h-[200px] border rounded shadow">;
             }
             reader.readAsDataURL(file);
         }

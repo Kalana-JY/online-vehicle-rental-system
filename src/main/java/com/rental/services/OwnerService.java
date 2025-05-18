@@ -1,7 +1,8 @@
 package com.rental.services;
 
-import java.sql.ResultSet; 
+import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import com.rental.model.Owner;
 import com.rental.utils.DBConnect;
@@ -10,7 +11,7 @@ public class OwnerService {
 	
 	public void regCustomer(Owner cus) {
 		try {
-			String query = "insert into customer values('"+cus.getName()+"','"+cus.getEmail()+"','"+cus.getPassword()+"','"+cus.getAddress()+"','"+cus.getCity()+"','"+cus.getGender()+"','"+cus.getIdnumber()+"','"+cus.getContactno()+"')";
+			String query = "insert into owner values('"+cus.getName()+"','"+cus.getEmail()+"','"+cus.getPassword()+"','"+cus.getAddress()+"','"+cus.getCity()+"','"+cus.getGender()+"','"+cus.getIdnumber()+"','"+cus.getContactno()+"')";
 			
 			Statement statment = DBConnect.getConnection().createStatement();
 			statment.executeUpdate(query);
@@ -23,7 +24,7 @@ public class OwnerService {
 	
 	public boolean validate(Owner cus) {
 		try {
-			String query = "select * from customer where email ='"+cus.getEmail()+"' and password='"+cus.getPassword()+"'";
+			String query = "select * from owner where email ='"+cus.getEmail()+"' and password='"+cus.getPassword()+"'";
 			
 			Statement statment = DBConnect.getConnection().createStatement();
 			
@@ -42,7 +43,7 @@ public class OwnerService {
 	
 	public Owner getOne(Owner cus) {
 		try {
-			String query = "select * from customer where email ='"+cus.getEmail()+"' and password='"+cus.getPassword()+"'";
+			String query = "select * from owner where email ='"+cus.getEmail()+"' and password='"+cus.getPassword()+"'";
 			
 			Statement statment = DBConnect.getConnection().createStatement();
 			
@@ -64,14 +65,14 @@ public class OwnerService {
 			e.printStackTrace();
 		}
 		
-		return cus;
+		return null;
 	}
 	
 	
 	public void updateCustomer(Owner customer) {
 		
 		try {
-			String query = "update customer SET name='"+customer.getName()+"',email='"+customer.getEmail()+"',password='"+customer.getPassword()+"',address='"+customer.getAddress()+"',city='"+customer.getCity()+"',gender='"+customer.getGender()+"',idnumber='"+customer.getIdnumber()+"',contactno='"+customer.getContactno()+"' where email='"+customer.getEmail()+"' ";
+			String query = "update owner SET name='"+customer.getName()+"',email='"+customer.getEmail()+"',password='"+customer.getPassword()+"',address='"+customer.getAddress()+"',city='"+customer.getCity()+"',gender='"+customer.getGender()+"',idnumber='"+customer.getIdnumber()+"',contactno='"+customer.getContactno()+"' where email='"+customer.getEmail()+"' ";
 			
 			Statement statement = DBConnect.getConnection().createStatement();
 			statement.executeUpdate(query);
@@ -85,7 +86,7 @@ public class OwnerService {
 	
 	public Owner singleDataButton(Owner cus) {
 		try {
-			String query = "select * from customer where email ='"+cus.getEmail()+"'";
+			String query = "select * from owner where email ='"+cus.getEmail()+"'";
 			
 			Statement statment = DBConnect.getConnection().createStatement();
 			
@@ -114,7 +115,7 @@ public class OwnerService {
 	public void deleteCustomer(Owner cus) {
 		try {
 			
-			String query = "Delete from customer where email ='"+cus.getEmail()+"'";
+			String query = "Delete from owner where email ='"+cus.getEmail()+"'";
 			
 			Statement statement = DBConnect.getConnection().createStatement();
 			statement.executeUpdate(query);
@@ -125,6 +126,37 @@ public class OwnerService {
 		}
 	}
 	
-	
+	public ArrayList<Owner> getAllOwner() {
+		
+		try {
+			
+			ArrayList<com.rental.model.Owner> listOwner = new ArrayList<com.rental.model.Owner>();
+			
+			String query = "SELECT * FROM owner";
+			
+			Statement statement = com.rental.utils.DBConnect.getConnection().createStatement();
+			ResultSet rs = statement.executeQuery(query);
+			
+			while(rs.next()) {
+				com.rental.model.Owner cus = new com.rental.model.Owner();
+				cus.setName(rs.getString("name"));
+				cus.setEmail(rs.getString("email"));
+				cus.setPassword(rs.getString("password"));
+				cus.setAddress(rs.getString("address"));
+				cus.setCity(rs.getString("city"));
+				cus.setGender(rs.getString("gender"));
+				cus.setIdnumber(rs.getString("idnumber"));
+				cus.setContactno(rs.getString("contactno"));
+				listOwner.add(cus);
+			}
+			
+			return listOwner;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
 
 }

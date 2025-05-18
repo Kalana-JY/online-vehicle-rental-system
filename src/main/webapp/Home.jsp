@@ -364,7 +364,9 @@
                             <h3 class="fw-semibold mb-3">Rent It Out Today!</h3>
                             <p class="text-muted mb-4">List your vehicle on our platform and start making money effortlessly. Secure, reliable, and hassle-free!</p>
                             
-                            <button class="btn btn-warning">Register Your Vehicle Now</button>
+                            <form>
+                            	<button type="submit" class="btn btn-warning" formaction="ownerSignin.jsp">Register Your Vehicle Now</button>
+                            </form>
                             
                         </div>
                     </div>
