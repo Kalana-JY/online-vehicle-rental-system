@@ -36,4 +36,19 @@ public class messageService {
 			return null;
 		}
 	}
+	
+	public void sendmsg(messages msg) {
+		try {
+			
+			String query="insert into messages values('"+msg.getEmail()+"','"+msg.getName()+"','"+msg.getPhone()+"','"+msg.getMessage()+"')";
+			
+			Statement statement= DBConnect.getConnection().createStatement();
+			statement.executeUpdate(query);
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+	}
+	
 }

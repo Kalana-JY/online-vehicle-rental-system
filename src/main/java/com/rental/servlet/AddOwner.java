@@ -44,7 +44,7 @@ public class AddOwner extends HttpServlet {
 		OwnerService service = new OwnerService();
 		service.regCustomer(cus);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp"); 
+		RequestDispatcher dispatcher = request.getRequestDispatcher("ownerLogin.jsp"); 
 		
 		
 		dispatcher.forward(request, response);
