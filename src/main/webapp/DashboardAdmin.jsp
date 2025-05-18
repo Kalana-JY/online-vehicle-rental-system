@@ -140,9 +140,11 @@
 	<div id="vom" class="container p-3 my-3 border rounded" style='background-color: #a8b6cd;'>
 		<div class="d-flex justify-content-between align-items-center mb-2">
 			<h3>Vehicle Owner Management</h3>
-				<button type="button" class="btn btn-success m-1" data-bs-toggle="collapse" data-bs-target="#voTableSection" aria-expanded="false" aria-controls="voTableSection"> Show All Owners</button>
+			<form action="ownerRead" method="post">
+				<button type="submit" class="btn btn-success m-1" data-bs-toggle="collapse" data-bs-target="#voTableSection" aria-expanded="false" aria-controls="voTableSection"> Show All Owners</button>
+			</form>	
 		</div>
-		<div class="collapse" id="voTableSection">
+		<div id="voTableSection" class="collapse ${not empty cusDetails ? 'show' : ''}">
 			<div class="scrollable-table">
 				<table class="table table-bordered">
 	  				<thead>
@@ -155,24 +157,28 @@
 					      <th scope="col">Gender</th>
 					      <th scope="col">ID Number</th>
 					      <th scope="col">Contact No</th>
+					      <th scope="col">Actions</th>
 					    </tr>
 	  				</thead>
 	  				<tbody>
-					  	<c:forEach var="customer" items="${cus}">
+					  	<c:forEach var="owner" items="${ownerDetails}">
 					  		<tr>
-					  			<td>${customer.name}</td>
-					  			<td>${customer.age}</td>
-					  			<td>${customer.email}</td>
-					  			<td>${customer.password}</td>
+					  			<td>${owner.name}</td>
+					  			<td>${owner.email}</td>
+					  			<td>${owner.password}</td>
+					  			<td>${owner.address}</td>
+					  			<td>${owner.city}</td>
+					  			<td>${owner.gender}</td>
+					  			<td>${owner.idnumber}</td>
+					  			<td>${owner.contactno}</td>
 					  			<td>
 					  				<form action="singleData" method="post">
-					  					<input type="hidden" name="email" value="${customer.email}">
+					  					<input type="hidden" name="email" value="${owner.email}">
 					  					<button type="submit">View</button>
 					  				</form>
-					  			</td>
-					  			<td>
+					  			
 					  				<form action="deleteCustomer" method="post">
-					  					<input type="hidden" name="email" value="${customer.email}">
+					  					<input type="hidden" name="email" value="${owner.email}">
 					  					<button type="submit" class="btn btn-danger">Delete</button>
 					  				</form>
 					  			</td>
@@ -187,7 +193,9 @@
 	<div id="vm" class="container p-3 my-3 border rounded" style='background-color: #a8b6cd;'>
 		<div class="d-flex justify-content-between align-items-center mb-2">
 			<h3>Vehicle Management</h3>
-				<button type="button" class="btn btn-success m-1" data-bs-toggle="collapse" data-bs-target="#vehiTableSection" aria-expanded="false" aria-controls="vehiTableSection"> Show All Vehicles</button>
+			<form>
+				<button type="submit" class="btn btn-success m-1" data-bs-toggle="collapse" data-bs-target="#vehiTableSection" aria-expanded="false" aria-controls="vehiTableSection"> Show All Vehicles</button>
+			</form>	
 		</div>
 		<div class="collapse" id="vehiTableSection">
 			<div class="scrollable-table">
@@ -201,7 +209,7 @@
 					      <th scope="col">Engine Number</th>
 					      <th scope="col">Seating Capacity</th>
 					      <th scope="col">Fuel Type</th>
-					      <th scope="col">Vehicle Photo</th>
+					      <th scope="col">Actions</th>
 	    				</tr>
 	    			</thead>
 	  				<tbody>
@@ -214,16 +222,15 @@
 					  			<td>${vehi.enginenumber}</td>
 					  			<td>${vehi.seatingcapacity}</td>
 					  			<td>${vehi.fueltype}</td>
-					  			<td>${vehi.vehiclephoto}</td>
 					  			<td>
-					  				<form action="singleData" method="post">
-					  					<input type="hidden" name="email" value="${vehi.enginenumber}">
+					  				<form action="vehicleDataButton" method="post">
+					  					<input type="hidden" name="enginenumber" value="${vehi.enginenumber}">
 					  					<button type="submit">View</button>
 					  				</form>
 					  			</td>
 					  			<td>
-					  				<form action="deleteCustomer" method="post">
-					  					<input type="hidden" name="email" value="${vehi.enginenumber}">
+					  				<form action="deleteVehicle" method="post">
+					  					<input type="hidden" name="enginenumber" value="${vehi.enginenumber}">
 					  					<button type="submit" class="btn btn-danger">Delete</button>
 					  				</form>
 					  			</td>

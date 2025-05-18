@@ -2,6 +2,7 @@ package com.rental.services;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import com.rental.model.Owner;
 import com.rental.utils.DBConnect;
@@ -125,6 +126,37 @@ public class OwnerService {
 		}
 	}
 	
-	
+	public ArrayList<Owner> getAllOwner() {
+		
+		try {
+			
+			ArrayList<com.rental.model.Owner> listOwner = new ArrayList<com.rental.model.Owner>();
+			
+			String query = "SELECT * FROM owner";
+			
+			Statement statement = com.rental.utils.DBConnect.getConnection().createStatement();
+			ResultSet rs = statement.executeQuery(query);
+			
+			while(rs.next()) {
+				com.rental.model.Owner cus = new com.rental.model.Owner();
+				cus.setName(rs.getString("name"));
+				cus.setEmail(rs.getString("email"));
+				cus.setPassword(rs.getString("password"));
+				cus.setAddress(rs.getString("address"));
+				cus.setCity(rs.getString("city"));
+				cus.setGender(rs.getString("gender"));
+				cus.setIdnumber(rs.getString("idnumber"));
+				cus.setContactno(rs.getString("contactno"));
+				listOwner.add(cus);
+			}
+			
+			return listOwner;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
 
 }

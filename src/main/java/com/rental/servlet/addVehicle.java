@@ -42,7 +42,7 @@ public class addVehicle extends HttpServlet {
         service.regVehicle(vehi);
         
         //forward the user to their profile page
-        RequestDispatcher dispatcher = request.getRequestDispatcher("ownerprofile.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("vehicleprofile.jsp");
         dispatcher.forward(request, response);
     }
 }

@@ -293,6 +293,16 @@
 		<url-pattern>/deletevehi</url-pattern> <!-- give unique name -->
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>ownerRead</servlet-name>
+		<servlet-class>servlet.ownerRead</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ownerRead</servlet-name>
+		<url-pattern>/ownerread</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
 	<!-- vehicle owner -->
 	
 	<!-- staff -->
