@@ -5,12 +5,15 @@ import java.sql.ResultSet;
 
 
 
-import java.sql.Statement;
 
+import java.sql.Statement;
+import java.util.ArrayList;
 
 import com.rental.model.*;
 
 import com.rental.utils.*;
+
+
 
 public class staffService {
 
@@ -99,6 +102,38 @@ public class staffService {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+	
+	public ArrayList<vehicle> getAllVehicle(){
+		try {
+			ArrayList<vehicle>listVehi=new ArrayList<vehicle>();
+			
+			String query="select * from vehicle";
+			
+			Statement statement = DBConnect.getConnection().createStatement();
+			
+			ResultSet rs= statement.executeQuery(query);
+			while(rs.next()) {
+				vehicle vc=new vehicle();
+				vc.setVehicletype(rs.getString("vehicletype"));
+				vc.setTransmissiontype(rs.getString("transmissiontype"));
+				vc.setVehiclenumber(rs.getString("vehiclenumber"));
+				vc.setVehiclecolor(rs.getString("vehiclecolor"));
+				vc.setEnginenumber(rs.getString("enginenumber"));
+				vc.setSeatingcapacity(rs.getInt("seatingcapacity"));
+				vc.setFueltype(rs.getString("fueltype"));
+				vc.setVehiclephoto(rs.getBytes("vehiclephoto"));
+				listVehi.add(vc);
+			}
+			
+			return listVehi;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			return null;
+			
 		}
 	}
 	

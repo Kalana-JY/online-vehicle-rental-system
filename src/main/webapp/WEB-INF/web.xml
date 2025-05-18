@@ -350,6 +350,17 @@
 		<url-pattern>/updtstf</url-pattern>
 	</servlet-mapping>
 	
+<servlet>
+	<servlet-name>displayVehicle</servlet-name>
+	<servlet-class>servlet.displayVehicle</servlet-class>
+</servlet>
+
+<servlet-mapping>
+
+	<servlet-name>displayVehicle</servlet-name>
+	<url-pattern>/disvehi</url-pattern>
+</servlet-mapping>
+	
 </web-app>	
 
 
