@@ -82,9 +82,11 @@
 						<div class="card-body">
 						
 							<div class="d-grid gap-2">
-							<button id="viewVehiclesBtn" class="btn btn-outline-primary view-vehicle" onclick="toggleTables('vehicles')">
+							<form action="displayVehicle" method="post">
+							<button type="submit" id="viewVehiclesBtn" class="btn btn-outline-primary view-vehicle" >
 							<i class="fas fa-car"></i>View Vehicles
 							</button>
+							</form>
 							<form action="displayMessage" method="post">
 							<button type="submit" id="viewInquriesBtn" class="btn btn-outline-primary btn-sm btn-active" >
 							View Inquiries
@@ -114,8 +116,8 @@
 										<th>Name</th>
 										<th>Phone no</th>
 										<th>Message</th>
-										<th>Action</th>
 										<th>Reply</th>
+										<th>Action</th>
 									</tr>
 								</thead>
 								
@@ -128,6 +130,7 @@
 											<td>${msg.name}</td>
 											<td>${msg.phone}</td>
 											<td>${msg.message}</td>
+											<td></td>
 											<td>
 											<button class="btn btn-primary btn-sm btn-reply" onclick="openReplyModal('${msg.email}','${msg.message}')">
 											<i class="fas fa-reply"></i>Reply
@@ -160,23 +163,24 @@
 											<th>Vehicle Number</th>
 											<th>Color</th>
 											<th>Engine no</th>
-											<th>Seating</th>
+											<th>Seating Capacity</th>
 											<th>Fuel Type</th>
 											<th>Image</th>
 										</tr>
 									</thead>
 									<tbody>
-									
+									<c:forEach var="vehicle" items="${vehicle}">
 										<tr>
-											<td>Sedan</td>
-											<td>Automatic</td>
-											<td>CAA-8150</td>
-											<td>White</td>
-											<td>ENG3343</td>
-											<td>5</td>
-											<td>Petrol</td>
-											<td><img src="https://via.placeholder.com/80x60" class="vehicle-image" alt="Vehicle"></td>
+											<td>${vehicle.vehicletype}</td>
+											<td>${vehicle.transmissiontype}</td>
+											<td>${vehicle.vehiclenumber}</td>
+											<td>${vehicle.vehiclecolor}</td>
+											<td>${vehicle.enginenumber}</td>
+											<td>${vehicle.seatingcapacity}</td>
+											<td>${vehicle.fueltype}</td>
+											<td>${vehicle.vehiclephoto}</td>
 										</tr>
+										</c:forEach>
 									</tbody>
 								</table>
 							</div>
@@ -242,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			alert('Plase enter your reply before sending...')
 		}
 		
-		alert(`Reply to ${email}:\n\n${reply}`);
+		alert(Reply to ${email}:\n\n${reply});
 		closeReplyModal();
 	}
 	
