@@ -1,6 +1,6 @@
 package com.rental.servlet;
 
-import java.io.IOException; 
+import java.io.IOException;
 import java.io.InputStream;
 
 import javax.servlet.RequestDispatcher;

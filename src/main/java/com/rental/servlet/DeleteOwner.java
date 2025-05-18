@@ -1,6 +1,6 @@
 package com.rental.servlet;
 
-import java.io.IOException; 
+import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,7 +13,7 @@ import com.rental.model.Owner;
 import com.rental.services.OwnerService;
 
 
-@WebServlet("/DeleteOwnet")
+@WebServlet("/DeleteOwner")
 public class DeleteOwner extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,7 +34,7 @@ public class DeleteOwner extends HttpServlet {
 		OwnerService service = new OwnerService();
 		service.deleteCustomer(cus);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("ownerLogin");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("ownerLogin.jsp");
 		
 		dispatcher.forward(request, response);
 	}
