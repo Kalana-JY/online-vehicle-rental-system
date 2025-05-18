@@ -270,10 +270,10 @@
 					  			
 					  				<button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#editStaffModal" onclick="setEditFormData('${staff.email}', '${staff.name}', '${staff.password}')">Edit</button>
 					  			
-					  				<form action="staffDelete" method="post">
-					  					<input type="hidden" name="email" value="${staff.email}">
-					  					<button type="submit" class="btn btn-danger">Delete</button>
-					  				</form>
+					  				<form action="staffDelete" method="post" onsubmit="return confirm('Are you sure you want to delete this staff member?');">
+									    <input type="hidden" name="email" value="${staff.email}">
+									    <button type="submit" class="btn btn-danger">Delete</button>
+									</form>
 					  			</td>
 					  		</tr>
 					  	</c:forEach>
@@ -348,6 +348,56 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+// Handle staff add form
+$('#addStaffForm').on('submit', function(e) {
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: $(this).attr('action'),
+        data: $(this).serialize(),
+        success: function() {
+            $('#addStaffModal').modal('hide');
+            location.reload();
+        },
+        error: function(xhr) {
+            alert('Error: ' + xhr.responseText);
+        }
+    });
+});
+
+// Handle staff edit form
+$('#editStaffForm').on('submit', function(e) {
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: $(this).attr('action'),
+        data: $(this).serialize(),
+        success: function() {
+            $('#editStaffModal').modal('hide');
+            location.reload();
+        },
+        error: function(xhr) {
+            alert('Error: ' + xhr.responseText);
+        }
+    });
+});
+
+// Confirm before delete
+$('form[action="staffDelete"]').on('submit', function(e) {
+    if(!confirm('Are you sure you want to delete this staff member?')) {
+        e.preventDefault();
+    }
+});
+
+// Function to populate edit modal
+function setEditFormData(email, name, password) {
+    $('#editEmail').val(email);
+    $('#editName').val(name);
+    $('#editPassword').val(password);
+    $('#editStaffModal').modal('show');
+}
+</script>
 
 </body>
 </html>

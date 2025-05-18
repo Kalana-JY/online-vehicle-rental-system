@@ -1,4 +1,3 @@
-
 <div class="modal fade" id="editStaffModal" tabindex="-1" aria-labelledby="editStaffModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -7,26 +6,49 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                
-                <form action="staffUpdate" method="post">
-					<div class="mb-3">
-						<label for="signupEmail" class="form-label">Email:</label>
-						<input type="email" class="form-control" id="signupEmail" name="email" value="${param.email}">
-					</div>
-					<div class="mb-3">
-						<label for="fullName" class="form-label">Full Name:</label>
-						<input type="text" class="form-control" id="fullName" name="name" value="${param.name}">
-					</div>
-					<div class="mb-3">
-						<label for="signupPassword" class="form-label">Password</label>
-						<input type="text" class="form-control" id="signupPassword" name="password" value="${param.password}">
-					</div>
-		
-					<div class="d-grid gap-2">
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</div>
-				</form>
+                <form id="editStaffForm" action="staffUpdate" method="post">
+                    <input type="hidden" id="editEmail" name="email">
+                    <div class="mb-3">
+                        <label for="editName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="editName" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="editPassword" name="password" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+function setEditFormData(email, name, password) {
+    document.getElementById('editEmail').value = email;
+    document.getElementById('editName').value = name;
+    document.getElementById('editPassword').value = password;
+}
+
+$(document).ready(function() {
+    $('#editStaffForm').on('submit', function(e) {
+        e.preventDefault();
+        var form = $(this);
+        $.ajax({
+            type: form.attr('method'),
+            url: form.attr('action'),
+            data: form.serialize(),
+            success: function(response) {
+                $('#editStaffModal').modal('hide');
+                location.reload();
+            },
+            error: function(xhr, status, error) {
+                alert('Error updating staff: ' + error);
+            }
+        });
+    });
+});
+</script>
