@@ -42,7 +42,7 @@ public class staffUpdate extends HttpServlet {
 		staffService service=new staffService();
 		service.updateStaff(stf);
 		
-		response.sendRedirect("DashboardAdmin.jsp");
+		response.sendRedirect("Staff.jsp");
 	}
 
 }

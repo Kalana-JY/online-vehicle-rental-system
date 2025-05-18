@@ -36,22 +36,22 @@
 						<div class="card-body">
 							<div class="profile-section">
 								<div class="profile-info">
-								<c:set var="staff" value="${staff}"></c:set>
+								<c:set var="staff" value="${stf}"></c:set>
 									<span class="profile-label">Name:</span><div class="mb-3">
 									<label for="fullName" class="form-label"></label>
-									<input type="text" class="form-control" id="fullName" name="name" value="${staff.name }" required>
+									<input type="text" class="form-control" id="fullName" name="name" value="${stf.name }" required>
 									</div>
 								</div>
 								<div class="profile-label">
 									<span class="profile-label">Email:</span><div class="mb-3">
 									<label for="signupEmail" class="form-label"></label>
-									<input type="email" class="form-control" id="signupEmail" name="email" value="${staff.email }" required>
+									<input type="email" class="form-control" id="signupEmail" name="email" value="${stf.email }" required>
 									</div>
 								</div>
 								<div class="profile-info">
 									<span class="profile-label">Password:</span><div class="mb-3">
 									<label for="signupPassword" class="form-label"></label>
-									<input type="password" class="form-control" id="signupPassword" name="password" value="${staff.password }" required>
+									<input type="password" class="form-control" id="signupPassword" name="password" value="${stf.password }" required>
 									</div>
 								</div>
 								
