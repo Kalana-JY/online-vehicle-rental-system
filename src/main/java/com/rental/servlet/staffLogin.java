@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.rental.model.*;
 import com.rental.services.*;
@@ -44,9 +45,10 @@ public class staffLogin extends HttpServlet {
 		
 		if(status) {
 			staff loginedStf=service.getOne(stf);
-			RequestDispatcher dispatcher =request.getRequestDispatcher("Staff.jsp");
-			request.setAttribute("staff",loginedStf);
-			dispatcher.forward(request, response);
+			HttpSession session = request.getSession();
+			session.setAttribute("stf", loginedStf);
+			response.sendRedirect("Staff.jsp");
+			
 		}else {
 			RequestDispatcher dispatcher =request.getRequestDispatcher("staffLogin.jsp");
 			dispatcher.forward(request, response);

@@ -383,6 +383,16 @@
 		<url-pattern>/deletestaff</url-pattern> <!-- give unique name -->
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>displayVehicle</servlet-name>
+		<servlet-class>servlet.displayVehicle</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>displayVehicle</servlet-name>
+		<url-pattern>/displayvehicle</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+	
 	<!-- staff -->
 	
 </web-app>	
