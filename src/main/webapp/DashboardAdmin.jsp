@@ -14,7 +14,7 @@
 <body style='background-color: #bbd0ff;'>
 <div class="d-flex min-vh-100">
 		<nav class="sidebar d-flex flex-column flex-shrink-0 p-3" style="width: 280px; background-color: #1f2937;">
-	        <a href="Admin.jsp" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+	        <a href="DashboardAdmin.jsp" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
 	            <img src="Images/svg (1).svg" alt="Logo" class="img-fluid me-2" width="50">
 	            <span class="fs-4">Admin Panel</span>
 	        </a>
@@ -190,28 +190,36 @@
 				<table class="table table-bordered">
 					<thead>
 	    				<tr>
-					      <th scope="col">Name</th>
-					      <th scope="col">Age</th>
-					      <th scope="col">Email</th>
-					      <th scope="col">Password</th>
+					      <th scope="col">Vehicle Type</th>
+					      <th scope="col">Transmission Type</th>
+					      <th scope="col">Vehicle Number</th>
+					      <th scope="col">Vehicle Color</th>
+					      <th scope="col">Engine Number</th>
+					      <th scope="col">Seating Capacity</th>
+					      <th scope="col">Fuel Type</th>
+					      <th scope="col">Vehicle Photo</th>
 	    				</tr>
 	    			</thead>
 	  				<tbody>
-					  	<c:forEach var="customer" items="${cus}">
+					  	<c:forEach var="vehi" items="${vehicle}">
 					  		<tr>
-					  			<td>${customer.name}</td>
-					  			<td>${customer.age}</td>
-					  			<td>${customer.email}</td>
-					  			<td>${customer.password}</td>
+					  			<td>${vehi.vehicletype}</td>
+					  			<td>${vehi.transmissiontype}</td>
+					  			<td>${vehi.vehiclenumber}</td>
+					  			<td>${vehi.vehiclecolor}</td>
+					  			<td>${vehi.enginenumber}</td>
+					  			<td>${vehi.seatingcapacity}</td>
+					  			<td>${vehi.fueltype}</td>
+					  			<td>${vehi.vehiclephoto}</td>
 					  			<td>
 					  				<form action="singleData" method="post">
-					  					<input type="hidden" name="email" value="${customer.email}">
+					  					<input type="hidden" name="email" value="${vehi.enginenumber}">
 					  					<button type="submit">View</button>
 					  				</form>
 					  			</td>
 					  			<td>
 					  				<form action="deleteCustomer" method="post">
-					  					<input type="hidden" name="email" value="${customer.email}">
+					  					<input type="hidden" name="email" value="${vehi.enginenumber}">
 					  					<button type="submit" class="btn btn-danger">Delete</button>
 					  				</form>
 					  			</td>
@@ -234,7 +242,7 @@
 		<div class="collapse" id="staffTableSection">
 			<div class="d-flex justify-content-end align-items-center mb-2">
 				<button type="submit" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#addStaffModal">Add +</button>
-					<form action="ReadStaff" method="post">
+					<form action="staffRead" method="post">
 						<button type="submit" class="btn btn-success m-1">Load Staff</button>
 					</form>
 			</div>
@@ -242,28 +250,24 @@
 				<table class="table table-bordered text center">
 	  				<thead>
 	    				<tr>
-					     	<th scope="col">ID</th>
-					      	<th scope="col">Name</th>
 					      	<th scope="col">Email</th>
+					      	<th scope="col">Name</th>
 					      	<th scope="col">Password</th>
-					      	<th scope="col">File Name</th>
 					      	<th scope="col">Actions</th>
 					   	</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="staff" items="${cus}">
+						<c:forEach var="staff" items="${stfDetails}">
 					  		<tr>
-					  			<td>${staff.id}</td>
-					  			<td>${staff.name}</td>
 					  			<td>${staff.email}</td>
+					  			<td>${staff.name}</td>
 					  			<td>${staff.password}</td>
-					  			<td>${staff.fileName}</td>
 					  			<td class="d-flex">
 					  			
-					  				<button type="button" class="btn btn-success m-1" data-bs-toggle="modal" data-bs-target="#editAdminModal" onclick="setEditFormData('${staff.id}', '${staff.name}', '${staff.email}', '${staff.password}', '${staff.fileName}')">Edit</button>
+					  				<button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#editStaffModal" onclick="setEditFormData('${staff.email}', '${staff.name}', '${staff.password}')">Edit</button>
 					  			
-					  				<form action="deleteCustomer" method="post">
-					  					<input type="hidden" name="email" value="${customer.email}">
+					  				<form action="deleteStaff" method="post">
+					  					<input type="hidden" name="email" value="${staff.email}">
 					  					<button type="submit" class="btn btn-danger">Delete</button>
 					  				</form>
 					  			</td>
