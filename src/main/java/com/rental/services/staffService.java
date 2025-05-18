@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 
 
 
+
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -98,7 +99,6 @@ public class staffService {
 	
 
 	public ArrayList<vehicle> getAllVehicle(){
-
 		try {
 			ArrayList<vehicle>listVehi=new ArrayList<vehicle>();
 			
@@ -126,8 +126,10 @@ public class staffService {
 			e.printStackTrace();
 			
 			return null;
-		}	
+			
 		}
+	}	
+		
 
 	public ArrayList<staff> getAllStaff() {
 		

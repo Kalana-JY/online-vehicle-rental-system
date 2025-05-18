@@ -1,7 +1,6 @@
 package com.rental.servlet;
 
 import java.io.IOException;
-
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
