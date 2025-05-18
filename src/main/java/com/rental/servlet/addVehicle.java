@@ -1,6 +1,6 @@
 package com.rental.servlet;
 
-import java.io.IOException; 
+import java.io.IOException;
 import java.io.InputStream;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,9 +36,11 @@ public class addVehicle extends HttpServlet {
         InputStream inputStream = filePart.getInputStream();
         byte[] imageBytes = inputStream.readAllBytes();
         vehi.setVehiclephoto(imageBytes);
+        
         // Call service class to register the vehicle in the system
         vehicleService service = new vehicleService();
         service.regVehicle(vehi);
+        
         //forward the user to their profile page
         RequestDispatcher dispatcher = request.getRequestDispatcher("ownerprofile.jsp");
         dispatcher.forward(request, response);

@@ -1,6 +1,6 @@
 package com.rental.services;
 
-import java.sql.ResultSet; 
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 import com.rental.model.Owner;
@@ -10,7 +10,7 @@ public class OwnerService {
 	
 	public void regCustomer(Owner cus) {
 		try {
-			String query = "insert into customer values('"+cus.getName()+"','"+cus.getEmail()+"','"+cus.getPassword()+"','"+cus.getAddress()+"','"+cus.getCity()+"','"+cus.getGender()+"','"+cus.getIdnumber()+"','"+cus.getContactno()+"')";
+			String query = "insert into owner values('"+cus.getName()+"','"+cus.getEmail()+"','"+cus.getPassword()+"','"+cus.getAddress()+"','"+cus.getCity()+"','"+cus.getGender()+"','"+cus.getIdnumber()+"','"+cus.getContactno()+"')";
 			
 			Statement statment = DBConnect.getConnection().createStatement();
 			statment.executeUpdate(query);
@@ -23,7 +23,7 @@ public class OwnerService {
 	
 	public boolean validate(Owner cus) {
 		try {
-			String query = "select * from customer where email ='"+cus.getEmail()+"' and password='"+cus.getPassword()+"'";
+			String query = "select * from owner where email ='"+cus.getEmail()+"' and password='"+cus.getPassword()+"'";
 			
 			Statement statment = DBConnect.getConnection().createStatement();
 			
@@ -42,7 +42,7 @@ public class OwnerService {
 	
 	public Owner getOne(Owner cus) {
 		try {
-			String query = "select * from customer where email ='"+cus.getEmail()+"' and password='"+cus.getPassword()+"'";
+			String query = "select * from owner where email ='"+cus.getEmail()+"' and password='"+cus.getPassword()+"'";
 			
 			Statement statment = DBConnect.getConnection().createStatement();
 			
@@ -64,14 +64,14 @@ public class OwnerService {
 			e.printStackTrace();
 		}
 		
-		return cus;
+		return null;
 	}
 	
 	
 	public void updateCustomer(Owner customer) {
 		
 		try {
-			String query = "update customer SET name='"+customer.getName()+"',email='"+customer.getEmail()+"',password='"+customer.getPassword()+"',address='"+customer.getAddress()+"',city='"+customer.getCity()+"',gender='"+customer.getGender()+"',idnumber='"+customer.getIdnumber()+"',contactno='"+customer.getContactno()+"' where email='"+customer.getEmail()+"' ";
+			String query = "update owner SET name='"+customer.getName()+"',email='"+customer.getEmail()+"',password='"+customer.getPassword()+"',address='"+customer.getAddress()+"',city='"+customer.getCity()+"',gender='"+customer.getGender()+"',idnumber='"+customer.getIdnumber()+"',contactno='"+customer.getContactno()+"' where email='"+customer.getEmail()+"' ";
 			
 			Statement statement = DBConnect.getConnection().createStatement();
 			statement.executeUpdate(query);
@@ -85,7 +85,7 @@ public class OwnerService {
 	
 	public Owner singleDataButton(Owner cus) {
 		try {
-			String query = "select * from customer where email ='"+cus.getEmail()+"'";
+			String query = "select * from owner where email ='"+cus.getEmail()+"'";
 			
 			Statement statment = DBConnect.getConnection().createStatement();
 			
@@ -114,7 +114,7 @@ public class OwnerService {
 	public void deleteCustomer(Owner cus) {
 		try {
 			
-			String query = "Delete from customer where email ='"+cus.getEmail()+"'";
+			String query = "Delete from owner where email ='"+cus.getEmail()+"'";
 			
 			Statement statement = DBConnect.getConnection().createStatement();
 			statement.executeUpdate(query);

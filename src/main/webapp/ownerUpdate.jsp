@@ -58,7 +58,7 @@
 <body class="bg-gray-100 min-h-screen flex items-center justify-center px-4 py-12">
 
     <div class="w-full max-w-lg bg-white rounded-2xl shadow-md p-8">
-        <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">
+        <h2 class="text-2xl font-bold text-center text-orange-600 mb-6">
             <i class="fa-solid fa-pen-to-square mr-2"></i>Update Owner Details
         </h2>
 
@@ -68,35 +68,35 @@
                 <label class="block text-sm font-medium text-gray-700">
                     <i class="fa-solid fa-user mr-1"></i>Name
                 </label>
-                <input type="text" name="name" value="${param.name}" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                <input type="text" name="name" value="${param.name}" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400" />
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700">
                     <i class="fa-solid fa-envelope mr-1"></i>Email
                 </label>
-                <input type="email" name="email" value="${param.email}" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                <input type="email" name="email" value="${param.email}" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400" />
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700">
                     <i class="fa-solid fa-lock mr-1"></i>Password
                 </label>
-                <input type="text" name="password" value="${param.password}" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                <input type="text" name="password" value="${param.password}" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400" />
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700">
                     <i class="fa-solid fa-location-dot mr-1"></i>Address
                 </label>
-                <input type="text" name="address" value="${param.address}" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                <input type="text" name="address" value="${param.address}" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400" />
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700">
                     <i class="fa-solid fa-city mr-1"></i>City
                 </label>
-                <select name="city" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <select name="city" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
                     <option value="">Select City</option>
                     <option value="Colombo">Colombo</option>
                     <option value="Kandy">Kandy</option>
@@ -109,7 +109,7 @@
                 <label class="block text-sm font-medium text-gray-700">
                     <i class="fa-solid fa-venus-mars mr-1"></i>Gender
                 </label>
-                <select name="gender" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <select name="gender" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400">
                     <option value="">Select Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -120,18 +120,18 @@
                 <label class="block text-sm font-medium text-gray-700">
                     <i class="fa-solid fa-id-card mr-1"></i>NIC Number
                 </label>
-                <input type="text" name="idnumber" value="${param.idnumber}" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                <input type="text" name="idnumber" value="${param.idnumber}" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400" />
             </div>
 
             <div>
                 <label class="block text-sm font-medium text-gray-700">
                     <i class="fa-solid fa-phone mr-1"></i>Contact Number
                 </label>
-                <input type="text" name="contactno" value="${param.contactno}" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                <input type="text" name="contactno" value="${param.contactno}" class="mt-1 w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400" />
             </div>
 
             <button type="submit" name="submit"
-                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition duration-300">
+                class="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 rounded-lg transition duration-300">
                 <i class="fa-solid fa-floppy-disk mr-2"></i>Submit
             </button>
         </form>

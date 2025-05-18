@@ -18,7 +18,7 @@
 
 <div class="container mx-auto p-6">
     <div class="bg-white shadow-lg rounded-xl p-6">
-        <h2 class="text-2xl font-bold text-blue-700 border-b pb-3 flex items-center">
+        <h2 class="text-2xl font-bold text-orange-500 border-b pb-3 flex items-center">
             <i class="fa-solid fa-car-side mr-2"></i> Vehicle Profile
         </h2>
 
@@ -26,7 +26,7 @@
             <c:when test="${not empty vehicle}">
                 <div class="overflow-x-auto mt-6">
                     <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-blue-600 text-white">
+                        <thead class="bg-orange-500 text-white">
                             <tr>
                                 <th class="px-4 py-3 text-left text-sm font-semibold">Vehicle Type</th>
                                 <th class="px-4 py-3 text-left text-sm font-semibold">Transmission</th>
@@ -52,7 +52,7 @@
                                         <div class="flex gap-2">
                                             <form action="vehicleDataButton" method="post">
                                                 <input type="hidden" name="enginenumber" value="${vehi.enginenumber}">
-                                                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white text-sm px-3 py-1 rounded-md">
+                                                <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white text-sm px-3 py-1 rounded-md">
                                                     <i class="fa-solid fa-eye mr-1"></i> Edit
                                                 </button>
                                             </form>
@@ -69,9 +69,18 @@
                         </tbody>
                     </table>
 
+                    <!-- Add Vehicle -->
+                    <form action="newVehicle.jsp" method="post" class="w-full sm:w-auto mt-4">
+                        <button type="submit"
+                                class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-lg w-full sm:w-auto">
+                            <i class="fa-solid fa-plus mr-2"></i>Add Vehicle
+                        </button>
+                    </form>
+
                     <!-- Profile Button Below Table -->
                     <div class="mt-4 flex justify-start">
-                        <a href="" class="inline-flex items-center bg-gray-700 text-white px-4 py-2 text-sm rounded-md hover:bg-gray-800 transition">
+                        <a href="ownerprofile.jsp"
+                           class="inline-flex items-center bg-gray-700 text-white px-4 py-2 text-sm rounded-md hover:bg-gray-800 transition">
                             <i class="fas fa-user mr-2"></i> Profile
                         </a>
                     </div>
