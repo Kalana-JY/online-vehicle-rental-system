@@ -167,7 +167,7 @@ public class AdminServices implements UserSavices{
 	public void deleteUser(com.rental.model.User user) {
 		try {
 			
-			com.rental.model.Admin admin = new com.rental.model.Admin();
+			com.rental.model.Admin admin = (com.rental.model.Admin) user;
 			
 			String query = "DELETE FROM admin WHERE email = '"+admin.getEmail()+"'";
 			

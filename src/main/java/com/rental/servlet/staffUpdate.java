@@ -42,13 +42,7 @@ public class staffUpdate extends HttpServlet {
 		staffService service=new staffService();
 		service.updateStaff(stf);
 		
-		staff updatedStaff= service.getOne(stf);
-		
-		request.setAttribute("staff", updatedStaff);
-		
-		RequestDispatcher dispatcher=request.getRequestDispatcher("Staff.jsp");
-		
-		dispatcher.forward(request, response);
+		response.sendRedirect("DashboardAdmin.jsp");
 	}
 
 }
