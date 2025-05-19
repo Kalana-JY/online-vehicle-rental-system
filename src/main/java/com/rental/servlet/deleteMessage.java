@@ -1,7 +1,7 @@
 package com.rental.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,22 +10,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import com.rental.model.*;
-import com.rental.services.*;
-
-import com.rental.model.vehicle;
-import com.rental.services.staffService;
+import com.rental.model.messages;
+import com.rental.services.messageService;
 
 
 
-@WebServlet("/displayVehicle")
-public class displayVehicle extends HttpServlet {
+@WebServlet("/deleteMessage")
+public class deleteMessage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-
-    public displayVehicle() {
+    public deleteMessage() {
         super();
         
     }
@@ -36,27 +31,19 @@ public class displayVehicle extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-
-
-    
-    public displayVehicle() {
-        super();
-    }
-
 	
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		staffService service=new staffService();
+		messages msg=new messages();
+		msg.setEmail(request.getParameter("email"));
 		
-		ArrayList<vehicle> vehicle=service.getAllVehicle();
+		messageService message = new messageService();
+		message.deleteMessage(msg);
 		
-		request.setAttribute("vehicle",vehicle);
+		RequestDispatcher dispatcher= request.getRequestDispatcher("displayMessage");
 		
-		RequestDispatcher dispacher=request.getRequestDispatcher("Staff.jsp");
 		
-		dispacher.forward(request, response);
-
+		dispatcher.forward(request, response);
 	}
 
 }

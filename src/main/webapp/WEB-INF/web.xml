@@ -362,6 +362,17 @@
 		<url-pattern>/updtstf</url-pattern>
 	</servlet-mapping>
 	
+<servlet>
+	<servlet-name>displayVehicle</servlet-name>
+	<servlet-class>servlet.displayVehicle</servlet-class>
+</servlet>
+
+<servlet-mapping>
+
+	<servlet-name>displayVehicle</servlet-name>
+	<url-pattern>/disvehi</url-pattern>
+</servlet-mapping>
+
 	<servlet>
 		<servlet-name>staffRead</servlet-name>
 		<servlet-class>servlet.staffRead</servlet-class>
@@ -384,6 +395,28 @@
 	</servlet-mapping>
 	
 	<servlet>
+
+	<servlet-name>deleteMessage</servlet-name>
+	<servlet-class>servlet.deleteMessage</servlet-class>
+</servlet>
+
+<servlet-mapping>
+
+	<servlet-name>deleteMessage</servlet-name>
+	<url-pattern>/delmsg</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>replyMsg</servlet-name>
+	<servlet-class>servlet.replyMsg</servlet-class>
+</servlet>
+
+<servlet-mapping>
+
+	<servlet-name>replyMsg</servlet-name>
+	<url-pattern>/replmg</url-pattern>
+</servlet-mapping>
+
 		<servlet-name>displayVehicle</servlet-name>
 		<servlet-class>servlet.displayVehicle</servlet-class>
 	</servlet>
@@ -392,8 +425,10 @@
 		<servlet-name>displayVehicle</servlet-name>
 		<url-pattern>/displayvehicle</url-pattern> <!-- give unique name -->
 	</servlet-mapping>
+
 	
 	<!-- staff -->
+
 	
 </web-app>	
 

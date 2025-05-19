@@ -5,19 +5,30 @@ import java.sql.ResultSet;
 
 
 
+
+
+
+
 import java.sql.Statement;
 import java.util.ArrayList;
+
+
+import java.sql.Statement;
+import java.util.ArrayList;
+
 
 import com.rental.model.staff;
 import com.rental.model.vehicle;
 import com.rental.utils.DBConnect;
+
+
 
 public class staffService {
 
 	public void regStaff(staff stf) {
 		try {
 			
-			//String query="insert into staff values('"+stf.getEmail()+"','"+stf.getName()+"','"+stf.getPassword()+"')";     
+		 
 			
 			String query="insert into staff(email, name, password) values('"+stf.getEmail()+"','"+stf.getName()+"','"+stf.getPassword()+"')";
 			
@@ -90,6 +101,40 @@ public class staffService {
 		}
 	}
 	
+
+	public ArrayList<vehicle> getAllVehicle(){
+		try {
+			ArrayList<vehicle>listVehi=new ArrayList<vehicle>();
+			
+			String query="select * from vehicle";
+			
+			Statement statement = DBConnect.getConnection().createStatement();
+			
+			ResultSet rs= statement.executeQuery(query);
+			while(rs.next()) {
+				vehicle vc=new vehicle();
+				vc.setVehicletype(rs.getString("vehicletype"));
+				vc.setTransmissiontype(rs.getString("transmissiontype"));
+				vc.setVehiclenumber(rs.getString("vehiclenumber"));
+				vc.setVehiclecolor(rs.getString("vehiclecolor"));
+				vc.setEnginenumber(rs.getString("enginenumber"));
+				vc.setSeatingcapacity(rs.getInt("seatingcapacity"));
+				vc.setFueltype(rs.getString("fueltype"));
+				vc.setVehiclephoto(rs.getBytes("vehiclephoto"));
+				listVehi.add(vc);
+			}
+			
+			return listVehi;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			return null;
+			
+		}
+	}	
+		
+
 	public ArrayList<staff> getAllStaff() {
 		
 		try {
@@ -159,6 +204,7 @@ public class staffService {
 			return null;
 			
 		}
+
 	}
 	
 }
