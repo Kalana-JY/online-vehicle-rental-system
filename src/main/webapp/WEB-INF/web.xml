@@ -395,6 +395,7 @@
 	</servlet-mapping>
 	
 	<servlet>
+
 	<servlet-name>deleteMessage</servlet-name>
 	<servlet-class>servlet.deleteMessage</servlet-class>
 </servlet>
@@ -415,6 +416,16 @@
 	<servlet-name>replyMsg</servlet-name>
 	<url-pattern>/replmg</url-pattern>
 </servlet-mapping>
+
+		<servlet-name>displayVehicle</servlet-name>
+		<servlet-class>servlet.displayVehicle</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>displayVehicle</servlet-name>
+		<url-pattern>/displayvehicle</url-pattern> <!-- give unique name -->
+	</servlet-mapping>
+
 	
 	<!-- staff -->
 

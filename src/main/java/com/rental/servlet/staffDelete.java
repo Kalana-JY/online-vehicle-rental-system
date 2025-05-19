@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.rental.model.staff;
+import com.rental.services.staffService;
+
 
 @WebServlet("/staffDelete")
 public class staffDelete extends HttpServlet {
@@ -23,14 +26,13 @@ public class staffDelete extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		com.rental.model.staff staff = new com.rental.model.staff();
-		staff.setEmail(request.getParameter("email"));
-		
-		com.rental.services.staffService service = new com.rental.services.staffService();
-		service.deleteStaff(staff);
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("DashboardAdmin.jsp");
-		dispatcher.forward(request, response);
+		staff stf = new staff();
+        stf.setEmail(request.getParameter("email"));
+        
+        staffService service = new staffService();
+        service.deleteStaff(stf);
+        
+        response.sendRedirect("DashboardAdmin.jsp");
 		
 	}
 

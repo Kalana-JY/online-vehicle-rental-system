@@ -12,8 +12,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+
 import java.sql.Statement;
 import java.util.ArrayList;
+
 
 import com.rental.model.staff;
 import com.rental.model.vehicle;
@@ -26,7 +28,9 @@ public class staffService {
 	public void regStaff(staff stf) {
 		try {
 			
-			String query="insert into staff values('"+stf.getEmail()+"','"+stf.getName()+"','"+stf.getPassword()+"')";     
+		 
+			
+			String query="insert into staff(email, name, password) values('"+stf.getEmail()+"','"+stf.getName()+"','"+stf.getPassword()+"')";
 			
 			
 			Statement statement = DBConnect.getConnection().createStatement();
@@ -87,7 +91,7 @@ public class staffService {
 		
 		try {
 			
-			String query="update staff SET email='"+staff.getEmail()+"',"+"name='"+staff.getName()+"',"+"password='"+staff.getPassword()+"'where email='"+staff.getEmail()+"'";
+			String query="update staff SET name='"+staff.getName()+"',"+"password='"+staff.getPassword()+"'where email='"+staff.getEmail()+"'";
 			
 			Statement  statement = DBConnect.getConnection().createStatement();
 			statement.executeUpdate(query);
@@ -159,20 +163,47 @@ public class staffService {
 		
 	}
 	
-	public void deleteStaff(com.rental.model.staff stf) {
+	public void deleteStaff(staff stf) {
+	    try {
+	        String query = "DELETE FROM staff WHERE email = '"+stf.getEmail()+"'";
+	        Statement statement = DBConnect.getConnection().createStatement();
+	        statement.executeUpdate(query);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        throw new RuntimeException("Failed to delete staff: " + e.getMessage());
+	    }
+	}
+	
+	public ArrayList<vehicle> getAllVehicle(){
 		try {
+			ArrayList<vehicle>listVehi=new ArrayList<vehicle>();
 			
-			com.rental.model.staff staff = new com.rental.model.staff();
+			String query="select * from vehicle";
 			
-			String query = "DELETE FROM admin WHERE email = '"+staff.getEmail()+"'";
+			Statement statement = DBConnect.getConnection().createStatement();
 			
-			Statement statement = com.rental.utils.DBConnect.getConnection().createStatement();
-			statement.executeUpdate(query);
+			ResultSet rs= statement.executeQuery(query);
+			while(rs.next()) {
+				vehicle vc=new vehicle();
+				vc.setVehicletype(rs.getString("vehicletype"));
+				vc.setTransmissiontype(rs.getString("transmissiontype"));
+				vc.setVehiclenumber(rs.getString("vehiclenumber"));
+				vc.setVehiclecolor(rs.getString("vehiclecolor"));
+				vc.setEnginenumber(rs.getString("enginenumber"));
+				vc.setSeatingcapacity(rs.getInt("seatingcapacity"));
+				vc.setFueltype(rs.getString("fueltype"));
+				vc.setVehiclephoto(rs.getBytes("vehiclephoto"));
+				listVehi.add(vc);
+			}
+			
+			return listVehi;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			
+			return null;
+			
 		}
-		
 
 	}
 	

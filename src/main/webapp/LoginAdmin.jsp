@@ -35,7 +35,7 @@
                         <div>
                         	<p>Ready to manage On The Go Rentals!</p>
                         </div>
-                        <%-- ${pageContext.request.ContextPath}/admin/login --%>
+                        
                         <form method="post" action="ValidAdmin">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
@@ -47,7 +47,7 @@
                             </div>
                             <c:if test="${not empty Error}">
                             <div class="bg-danger bg-opacity-10  border border-danger rounded p-2 mb-2">
-                                 ${Error} <%--Invalid email or password. Please try again.--%>
+                                 ${Error} 
                             </div>
                         </c:if>
                             <div class="d-grid">

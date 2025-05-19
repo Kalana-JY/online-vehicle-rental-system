@@ -1,34 +1,31 @@
 package com.rental.model;
 
-public class Owner {
-	
-	String name;
-	String email;
-	String password;
+public class Owner extends User{
+		
 	String address;
 	String city;
 	String gender;
 	String idnumber;
 	String contactno;
 	
-	public String getName() {
-		return name;
+
+	public Owner() {
+		super();
+		this.address = "";
+		this.city = "";
+		this.gender = "";
+		this.idnumber = "";
+		this.contactno = "";
 	}
-	public void setName(String name) {
-		this.name = name;
+	public Owner(int id, String name, String email, String password,String address, String city, String gender, String idnumber, String contactno) {
+		super(id, name, email, password);
+		this.address = address;
+		this.city = city;
+		this.gender = gender;
+		this.idnumber = idnumber;
+		this.contactno = contactno;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+
 	public String getAddress() {
 		return address;
 	}

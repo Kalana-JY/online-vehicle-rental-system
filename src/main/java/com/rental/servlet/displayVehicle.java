@@ -10,14 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import com.rental.model.*;
 import com.rental.services.*;
+
+import com.rental.model.vehicle;
+import com.rental.services.staffService;
+
 
 
 @WebServlet("/displayVehicle")
 public class displayVehicle extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+
 
     public displayVehicle() {
         super();
@@ -31,6 +37,14 @@ public class displayVehicle extends HttpServlet {
 	}
 
 
+
+    
+    public displayVehicle() {
+        super();
+    }
+
+	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		staffService service=new staffService();
@@ -42,6 +56,7 @@ public class displayVehicle extends HttpServlet {
 		RequestDispatcher dispacher=request.getRequestDispatcher("Staff.jsp");
 		
 		dispacher.forward(request, response);
+
 	}
 
 }
