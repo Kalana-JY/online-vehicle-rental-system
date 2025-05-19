@@ -268,8 +268,6 @@
 					  			<td>${staff.password}</td>
 					  			<td class="d-flex">
 					  			
-					  				<button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#editStaffModal" onclick="setEditFormData('${staff.email}', '${staff.name}', '${staff.password}')">Edit</button>
-					  			
 					  				<form action="staffDelete" method="post" onsubmit="return confirm('Are you sure you want to delete this staff member?');">
 									    <input type="hidden" name="email" value="${staff.email}">
 									    <button type="submit" class="btn btn-danger">Delete</button>
