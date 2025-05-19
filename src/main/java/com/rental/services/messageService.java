@@ -42,7 +42,7 @@ public class messageService {
 	public void sendmsg(messages msg) {
 		try {
 			
-			String query="insert into messages values('"+msg.getEmail()+"','"+msg.getName()+"','"+msg.getPhone()+"','"+msg.getMessage()+"')";
+			String query="insert into messages (Email, Name, PhoneNo, Message) values('"+msg.getEmail()+"','"+msg.getName()+"','"+msg.getPhone()+"','"+msg.getMessage()+"')";
 			
 			Statement statement= DBConnect.getConnection().createStatement();
 			statement.executeUpdate(query);

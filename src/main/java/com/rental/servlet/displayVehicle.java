@@ -36,13 +36,6 @@ public class displayVehicle extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-
-
-    
-    public displayVehicle() {
-        super();
-    }
-
 	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -27,6 +27,19 @@
             return true;
         }
     </script>
+    <style>
+        body {
+            background-image: url('Images/Untitled design.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+	</style>
 </head>
 <body class="bg-orange-100 min-h-screen flex items-center justify-center px-4">
 
