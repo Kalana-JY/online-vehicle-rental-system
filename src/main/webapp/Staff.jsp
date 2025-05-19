@@ -83,14 +83,12 @@
 						
 							<div class="d-grid gap-2">
 							<form action="displayVehicle" method="post">
-							<button type="submit" id="viewVehiclesBtn" class="btn btn-outline-primary view-vehicle" >
-							<i class="fas fa-car"></i>View Vehicles
+							<button type="submit" >View Vehicles
 							</button>
 							</form>
+							
 							<form action="displayMessage" method="post">
-							<button type="submit" id="viewInquriesBtn" class="btn btn-outline-primary btn-sm btn-active" >
-							View Inquiries
-							</button>
+							<button type="submit">View messages</button>
 							</form>
 							</div>
 						</div>
@@ -118,6 +116,7 @@
 										<th>Message</th>
 										<th>Reply</th>
 										<th>Action</th>
+										<th>Delete</th>
 									</tr>
 								</thead>
 								
@@ -128,13 +127,20 @@
 										<tr>
 											<td>${msg.email}</td>
 											<td>${msg.name}</td>
-											<td>${msg.phone}</td>
+											<td>${msg.phoneNo}</td>
 											<td>${msg.message}</td>
-											<td></td>
+											
+											<td>${msg.reply} </td>
 											<td>
 											<button class="btn btn-primary btn-sm btn-reply" onclick="openReplyModal('${msg.email}','${msg.message}')">
-											<i class="fas fa-reply"></i>Reply
+											<i class="fas fa-reply"></i>Action
 											</button>
+										    </td>
+											<td>
+											<form action="deleteMessage" method="post">
+												<input type="hidden" name="email" value="${msg.email}">
+												<button type="submit">Delete</button>
+											</form>
 											</td>
 										</tr>
 										
@@ -197,6 +203,7 @@
 			<span class="close" onclick="closeReplyModal()">&times;</span>
 			<h4><i class="fas fa-reply"></i>Reply to Customer</h4>
 			<div class="reply-form">
+			<form method="post" action="replyMsg">
 				<div class="mb-3">
 					<label for="customerEmail" class="form-label">To:</label>
 					<input type="text" class="form-control" id="customerEmail" readonly>
@@ -208,15 +215,16 @@
 				</div>
 				<div class="mb-3">
 					<label for="replyMessage" class="form-label">Reply:</label>
-					<textarea  class="form-control reply-textarea" id="replyMessage" rows="5" placeholder="type your reply here....." ></textarea>
+					<textarea  class="form-control reply-textarea" id="replyMessage" rows="5" name="reply" placeholder="type your reply here....." ></textarea>
 					
 				</div>
-				<button type="button" class="btn btn-reply" onclick="sendReply()">
+				<button type="submit" class="btn btn-reply" >//onclick="sendReply()"
 				<i class="fas fa-paper-plane"></i>Send Reply
 				</button>
 				<button type="button" class="btn btn-reply btn-reply-cancel" onclick="closeReplyModal()">
 				<i class="fas fa-times"></i>Cancel
 				</button>
+				</form>
 			</div>
 		</div>
 	</div>

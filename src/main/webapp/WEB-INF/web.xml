@@ -394,6 +394,28 @@
 		<url-pattern>/deletestaff</url-pattern> <!-- give unique name -->
 	</servlet-mapping>
 	
+	<servlet>
+	<servlet-name>deleteMessage</servlet-name>
+	<servlet-class>servlet.deleteMessage</servlet-class>
+</servlet>
+
+<servlet-mapping>
+
+	<servlet-name>deleteMessage</servlet-name>
+	<url-pattern>/delmsg</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>replyMsg</servlet-name>
+	<servlet-class>servlet.replyMsg</servlet-class>
+</servlet>
+
+<servlet-mapping>
+
+	<servlet-name>replyMsg</servlet-name>
+	<url-pattern>/replmg</url-pattern>
+</servlet-mapping>
+	
 	<!-- staff -->
 
 	

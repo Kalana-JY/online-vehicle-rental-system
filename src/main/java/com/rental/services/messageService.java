@@ -3,11 +3,13 @@ package com.rental.services;
 import java.sql.ResultSet;
 
 
+
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.rental.model.*;
-import com.rental.utils.*;
+import com.rental.utils.DBConnect;
+import com.rental.model.messages;
+
 
 public class messageService {
 
@@ -50,5 +52,35 @@ public class messageService {
 			e.printStackTrace();
 		}
 	}
+	
+	public void deleteMessage(messages msg) {
+		try {
+			
+			String query="delete from messages where Email ='"+msg.getEmail()+"'";
+			
+			Statement statement=DBConnect.getConnection().createStatement();
+			statement.executeUpdate(query);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public void sendReply(messages msg) {
+		
+		try {
+			
+			String query = "update messages SET reply ='"+msg.getReply()+"' where email='"+msg.getEmail()+"'";
+			
+			Statement statement=DBConnect.getConnection().createStatement();
+			statement.executeUpdate(query);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
 	
 }
