@@ -36,22 +36,22 @@
 						<div class="card-body">
 							<div class="profile-section">
 								<div class="profile-info">
-								<c:set var="staff" value="${stf}"></c:set>
+								<c:set var="staff" value="${staff}"></c:set>
 									<span class="profile-label">Name:</span><div class="mb-3">
 									<label for="fullName" class="form-label"></label>
-									<input type="text" class="form-control" id="fullName" name="name" value="${stf.name }" required>
+									<input type="text" class="form-control" id="fullName" name="name" value="${staff.name }" required>
 									</div>
 								</div>
 								<div class="profile-label">
 									<span class="profile-label">Email:</span><div class="mb-3">
 									<label for="signupEmail" class="form-label"></label>
-									<input type="email" class="form-control" id="signupEmail" name="email" value="${stf.email }" required>
+									<input type="email" class="form-control" id="signupEmail" name="email" value="${staff.email }" required>
 									</div>
 								</div>
 								<div class="profile-info">
 									<span class="profile-label">Password:</span><div class="mb-3">
 									<label for="signupPassword" class="form-label"></label>
-									<input type="password" class="form-control" id="signupPassword" name="password" value="${stf.password }" required>
+									<input type="password" class="form-control" id="signupPassword" name="password" value="${staff.password }" required>
 									</div>
 								</div>
 								
@@ -83,17 +83,10 @@
 						
 							<div class="d-grid gap-2">
 							<form action="displayVehicle" method="post">
-
 							<button type="submit" >View Vehicles
 							</button>
 							</form>
 							
-
-							<button type="submit" id="viewVehiclesBtn" class="btn btn-outline-primary view-vehicle" >
-							<i class="fas fa-car"></i>View Vehicles
-							</button>
-							</form>
-
 							<form action="displayMessage" method="post">
 							<button type="submit">View messages</button>
 							</form>
@@ -123,9 +116,7 @@
 										<th>Message</th>
 										<th>Reply</th>
 										<th>Action</th>
-
 										<th>Delete</th>
-
 									</tr>
 								</thead>
 								
@@ -136,14 +127,10 @@
 										<tr>
 											<td>${msg.email}</td>
 											<td>${msg.name}</td>
-											<td>${msg.phoneNo}</td>
+											<td>${msg.phone}</td>
 											<td>${msg.message}</td>
-
 											
 											<td>${msg.reply} </td>
-
-											<td></td>
-
 											<td>
 											<button class="btn btn-primary btn-sm btn-reply" onclick="openReplyModal('${msg.email}','${msg.message}')">
 											<i class="fas fa-reply"></i>Action

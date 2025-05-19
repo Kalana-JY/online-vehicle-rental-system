@@ -42,6 +42,18 @@
             return true;
         }
     </script>
+    <style>
+        body {
+            background-image: url('Images/Untitled design.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+	</style>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen px-4 py-12">
 

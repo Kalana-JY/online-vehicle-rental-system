@@ -83,7 +83,7 @@
 	    	</div>
 			</div>
 			
-	  
+	<%-- Customer Management --%>  
 	  
 	<div id="cm" class="container p-3 my-3 border rounded" style='background-color: #a8b6cd;'>
 		<div class="d-flex justify-content-between align-items-center mb-2">
@@ -124,7 +124,7 @@
 	  						<td>${customer.password}</td>
 	  						
 	  						<td>
-	  							<form action="deleteCustomerServlet" method="post">
+	  							<form action="DeleteCustomerAdmin" method="post" onsubmit="return confirm('Are you sure you want to delete this customer?');">
 	  								<input type="hidden" name="id" value="${customer.id}">
 	  								<button type="submit" class="btn btn-danger">Delete</button>
 	  							</form>
@@ -136,6 +136,8 @@
 			</div>
 		</div>
 	</div>
+	
+	<%-- Vehicle Owner Management --%> 
 	
 	<div id="vom" class="container p-3 my-3 border rounded" style='background-color: #a8b6cd;'>
 		<div class="d-flex justify-content-between align-items-center mb-2">
@@ -172,7 +174,7 @@
 					  			<td>${owner.idnumber}</td>
 					  			<td>${owner.contactno}</td>
 					  			<td>
-					  				<form action="DeleteOwner" method="post">
+					  				<form action="DeleteVOAdmin" method="post" onsubmit="return confirm('Are you sure you want to delete this vehicle owner?');">
 					  					<input type="hidden" name="email" value="${owner.email}">
 					  					<button type="submit" class="btn btn-danger">Delete</button>
 					  				</form>
@@ -184,6 +186,8 @@
 			</div>
 		</div>
 	</div>
+	
+	<%-- Vehicle Management --%> 
 	
 	<div id="vm" class="container p-3 my-3 border rounded" style='background-color: #a8b6cd;'>
 	    <div class="d-flex justify-content-between align-items-center mb-2">
@@ -222,7 +226,7 @@
 	                                    <input type="hidden" name="enginenumber" value="${vehi.enginenumber}">
 	                                    <button type="submit" class="btn btn-primary">View</button>
 	                                </form>
-	                                <form action="deleteVehicle" method="post">
+	                                <form action="DeleteVehicleAdmin" method="post" onsubmit="return confirm('Are you sure you want to delete this vehicle?');">
 	                                    <input type="hidden" name="enginenumber" value="${vehi.enginenumber}">
 	                                    <button type="submit" class="btn btn-danger">Delete</button>
 	                                </form>
@@ -234,6 +238,8 @@
 	        </div>
 	    </div>
 	</div>
+	
+	<%-- Staff Management --%> 
 	
 	<div id="sm" class="container p-3 my-3 border rounded" style='background-color: #a8b6cd;'>
 		<div class="d-flex justify-content-between align-items-center mb-2">
@@ -281,6 +287,8 @@
 		</div>
 	</div>
 	
+	<%-- Admin Management --%> 
+	
 	<section id="am" class="container p-3 my-3 border rounded" style='background-color: #a8b6cd;'>
 		<div class="d-flex justify-content-between align-items-center mb-2">
 		
@@ -323,7 +331,7 @@
 					  			<td>${admin.phoneNumber}</td>
 					  			<td>${admin.fileName}</td>
 					  			<td class="d-flex">
-					  				<form action="DeleteAdmin" method="post">
+					  				<form action="DeleteAdmin" method="post" onsubmit="return confirm('Are you sure you want to delete this admin member?');">
 					  					<input type="hidden" name="email" value="${admin.email}">
 					  					<button type="submit" class="btn btn-danger m-1">Delete</button>
 					  				</form>
@@ -339,7 +347,6 @@
 	<%@ include file="AddAdmin.jsp" %>
 	<%@ include file="AddStaff.jsp" %>
 	<%@ include file="ProfileAdmin.jsp" %>
-	<%@ include file="EditStaffAdmin.jsp" %>
 	
 	
 	</div>
@@ -356,23 +363,6 @@ $('#addStaffForm').on('submit', function(e) {
         data: $(this).serialize(),
         success: function() {
             $('#addStaffModal').modal('hide');
-            location.reload();
-        },
-        error: function(xhr) {
-            alert('Error: ' + xhr.responseText);
-        }
-    });
-});
-
-// Handle staff edit form
-$('#editStaffForm').on('submit', function(e) {
-    e.preventDefault();
-    $.ajax({
-        type: 'POST',
-        url: $(this).attr('action'),
-        data: $(this).serialize(),
-        success: function() {
-            $('#editStaffModal').modal('hide');
             location.reload();
         },
         error: function(xhr) {

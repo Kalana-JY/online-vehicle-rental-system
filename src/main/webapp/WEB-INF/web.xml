@@ -100,6 +100,48 @@
 	
 	</servlet-mapping>
 	
+	<servlet>
+	
+		<servlet-name>DeleteCustomerAdmin</servlet-name>
+		<servlet-class>servlet.DeleteCustomerAdmin</servlet-class>
+	
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>DeleteCustomerAdmin</servlet-name>
+		<url-pattern>/deletecustomeradmin</url-pattern>
+	
+	</servlet-mapping>
+	
+	<servlet>
+	
+		<servlet-name>DeleteVehicleAdmin</servlet-name>
+		<servlet-class>servlet.DeleteVehicleAdmin</servlet-class>
+	
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>DeleteVehicleAdmin</servlet-name>
+		<url-pattern>/deletevehicleadmin</url-pattern>
+	
+	</servlet-mapping>
+	
+	<servlet>
+	
+		<servlet-name>DeleteVOAdmin</servlet-name>
+		<servlet-class>servlet.DeleteVOAdmin</servlet-class>
+	
+	</servlet>
+	
+	<servlet-mapping>
+	
+		<servlet-name>DeleteVOAdmin</servlet-name>
+		<url-pattern>/deletevoadmin</url-pattern>
+	
+	</servlet-mapping>
+	
 	<!-- customer -->
 	
 	 <servlet>
@@ -417,6 +459,7 @@
 	<url-pattern>/replmg</url-pattern>
 </servlet-mapping>
 
+	<servlet>
 		<servlet-name>displayVehicle</servlet-name>
 		<servlet-class>servlet.displayVehicle</servlet-class>
 	</servlet>
