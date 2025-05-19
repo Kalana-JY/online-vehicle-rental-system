@@ -19,7 +19,7 @@
 	<section class="section">
         <div class="container p-3 my-3" style="background-color: #ffd0b2">
             <div class="row align-items-center">
-                <!-- Text Content on the Left -->
+                
                 <div class="col-md-6">
                     <h1>Find Your Best<br>Dream Vehicle for Rental</h1>
                     <p>
@@ -27,16 +27,6 @@
                     </p>
                     <a href="#" class="btn btn-warning">Explore Vehicles</a>
                 </div>
-                <!-- Image on the Right -->
-
-                <!-- Image on the Right -->
-
-
-                <!-- Image on the Right -->
-                <!-- Image on the Right -->
-
-
-
 
                 <div class="col-md-6 text-center">
                     <img src="Images/carplus.png" alt="Dream Vehicle" class="img-fluid">
@@ -92,36 +82,6 @@
 	</div>
 	</div>
 	
-	 <%--<div class="container-fluid">
-		<h4 class="fw-bold text-dark mb-3 py-3">Vehicle Categories</h4>
-		<section class="bg-light py-1">
-		<div class="catCard">
-		<div class="row g-2">
-		<div class="card1">
-			<h6 class="catTopic">Sedan</h6>
-  			<img src="Images\sedan.svg" class="img-fluid" class="card-img-top" alt="...">
-		</div>
-		<div class="card1">
-			<h6 class="catTopic">Hatchback</h6>
-  			<img src="Images\compact.svg" class="img-fluid" class="card-img-top" alt="...">
-		</div>
-		<div class="card1">
-			<h6 class="catTopic">Van</h6>
-  			<img src="Images\van.svg" class="img-fluid" class="card-img-top" alt="...">
-		</div>
-		<div class="card1">
-			<h6 class="catTopic">Pickup Truck</h6>
-  			<img src="Images\pickup.svg" class="img-fluid" class="card-img-top" alt="...">
-		</div>
-		<div class="card1">
-			<h6 class="catTopic">SUV</h6>
-  			<img src="Images\suv.svg" class="img-fluid" class="card-img-top" alt="...">
-		</div>
-		</div>
-		</div>
-		</section>
-	</div>--%>
-	
 	<div>
     <h4 class="fw-default text-dark mb-1" style="padding: 10px 50px;">Vehicle Categories</h4>
     <section class="bg-light py-1 text-center">
@@ -159,82 +119,6 @@
     </div>
     </section>
   </div>
-	
-	<%-- <div>
-	<h4 class="fw-default text-dark mb-1" style="padding: 10px 50px;">Popular Vehicles</h4>
-	<section class="bg-light py-1 d-flex">
-	<div class="pmCard">
-	<div class="row g-2">	
-	<div class="card1" style="width: 18rem;">
-  		<img src="Images\camryex.png" class="img-fluid" class="card-img-top" style="padding: 10px;">
-  	<div class="card-body">
-    	<h5 class="card-title">Toyota Camry SE 350</h5>
-    	<div class="pCard">
-    	<div class="row g-2">
-    	<div class="col-4">
-    		<img src="Images\gear.png" class="img-fluid icon-img">
-    		<p>Auto</p>
-    	</div>
-    	<div class="col-4">
-    		<img src="Images\petrol.png" class="img-fluid icon-img">
-    		<p>Petrol</p>
-    	</div>
-    	<div class="col-4">
-    		<img src="Images\seat.png" class="img-fluid icon-img">
-    		<p>5</p>
-    	</div>
-    	</div>
-    	</div>
-  	</div>
-	</div>
-	<div class="card1" style="width: 18rem;">
-  		<img src="Images\hiaceex.png" class="img-fluid" class="card-img-top" style="padding: 10px;">
-  	<div class="card-body">
-    	<h5 class="card-title">Toyota Hiace</h5>
-    	<div class="pCard">
-    	<div class="row g-2">
-    	<div class="col-4">
-    		<img src="Images\gear.png" class="img-fluid icon-img">
-    		<p>Auto</p>
-    	</div>
-    	<div class="col-4">
-    		<img src="Images\petrol.png" class="img-fluid icon-img">
-    		<p>Petrol</p>
-    	</div>
-    	<div class="col-4">
-    		<img src="Images\seat.png" class="img-fluid icon-img">
-    		<p>12</p>
-    	</div>
-    	</div>
-    	</div>
-  	</div>
-	</div>
-	<div class="card1" style="width: 18rem;">
-  		<img src="Images\raptorex.png" class="img-fluid" class="card-img-top" style="padding: 10px;">
-  	<div class="card-body">
-    	<h5 class="card-title">Ford Raptor Crewmax 4X4</h5>
-    	<div class="pCard">
-    	<div class="row g-2">
-    	<div class="col-4">
-    		<img src="Images\gear.png" class="img-fluid icon-img">
-    		<p>Auto</p>
-    	</div>
-    	<div class="col-4">
-    		<img src="Images\petrol.png" class="img-fluid icon-img">
-    		<p>Petrol</p>
-    	</div>
-    	<div class="col-4">
-    		<img src="Images\seat.png" class="img-fluid icon-img">
-    		<p>5</p>
-    	</div>
-    	</div>
-    	</div>
-  	</div>
-	</div>
-	</div>
-	</div>
-	</section>
-	</div>	--%>
 	
 	<div>
   <h4 class="fw-default text-dark mb-1" style="padding: 10px 50px;">Popular Vehicles</h4>
@@ -377,11 +261,6 @@
 </div>
 
 <%@ include file="\Partials\Footer.jsp" %>
-	
-	<%--
-	<form action="adminCustomers" method="post">
-	<button type="submit">All Customers</button>
-	</form>--%>
 
 </body>
 </html>
