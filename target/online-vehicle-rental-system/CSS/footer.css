@@ -1,0 +1,41 @@
+.footer {
+		background-color: #e3f2fd;
+        color: black; /* Light text color */
+   }
+.footer a {
+        color: black; /* Light gray for links */
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+.footer a:hover {
+        color: #3498db; /* Blue on hover */
+    }
+.footer h5 {
+        color: black; /* Light text for headings */
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+.footer .social-icons a {
+        font-size: 24px;
+        margin: 0 10px;
+        color: black;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+.footer .social-icons a:hover {
+        color: #FF8C00; /* Blue on hover */
+        transform: translateY(-5px); /* Slight lift on hover */
+    }
+.footer .contact-info i {
+        margin-right: 10px;
+        color: #3498db; /* Blue for icons */
+    }
+.footer .contact-info li {
+        margin-bottom: 10px;
+    }
+.footer .copyright {
+        border-top: 1px solid #34495e; /* Subtle border */
+        padding-top: 10px;
+        margin-top: 10px;
+        text-align: center;
+        color: #bdc3c7;
+    }

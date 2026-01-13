@@ -1,0 +1,37 @@
+.input-group-text{
+		
+		border: none;
+	}
+.vehiCat{
+		padding: 20px 30px;
+	}
+.catTopic{
+		text-align: center;
+		padding: 10px 10px;
+	}
+.card1 {
+      background-color: #D9D9D9;
+      transition: background-color 0.6s ease-in-out;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+.card1:hover {
+      background-color: #FF8C00;
+      color: white;
+    }
+.catCard{
+		margin-left: 30px;
+	}
+.pCard{
+		padding-left: 50px;
+	}
+.icon-img{
+		height: 24px; 
+		width: 24px;
+	}
+.pmCard{
+		margin: 10px;
+		margin-left: 220px;
+		margin-right: 30px;
+}
